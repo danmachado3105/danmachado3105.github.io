@@ -186,10 +186,10 @@ button:focus-visible {
   z-index: 1;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 28px;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
   max-width: 700px;
 }
 
@@ -345,71 +345,216 @@ button:focus-visible {
 /* ============================================
    SOBRE
    ============================================ */
-.about-grid {
+/* ============================================
+   HERO GRID — sobre mim + foto
+   ============================================ */
+.hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: 200px 1.2fr 1fr;
-  gap: 40px;
-  align-items: start;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
 }
 
-.about-photo-wrap {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  padding: 4px;
-  background: linear-gradient(160deg, var(--green-bright), var(--green-deep));
+.hero-content {
+  max-width: 620px;
 }
 
-.about-photo {
+.hero-title .highlight {
+  color: var(--green-bright);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.social-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icon:hover {
+  color: var(--green-bright);
+  border-color: var(--green-deep);
+  transform: translateY(-2px);
+}
+
+.hero-photo-wrap {
+  position: relative;
   width: 100%;
-  height: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo-glow {
+  position: absolute;
+  inset: -10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.35) 0%, rgba(46, 125, 50, 0.12) 55%, transparent 75%);
+  filter: blur(6px);
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+.hero-photo {
+  position: relative;
+  width: 88%;
+  height: 88%;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--bg);
-  display: block;
+  box-shadow: 0 0 0 2px var(--green-deep);
 }
 
-.about-text {
-  color: var(--text-muted);
-  font-size: 1.05rem;
+/* ============================================
+   TECNOLOGIAS
+   ============================================ */
+.tech-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.skills-box {
+.tech-category {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 28px;
 }
 
-.skills-title {
+.tech-category-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.diff-tag {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
+  color: #0a0f0d;
+  background: var(--green-bright);
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.tech-category-highlight {
+  border-color: var(--green-deep);
+  background: linear-gradient(160deg, rgba(74, 222, 128, 0.06), var(--card) 55%);
+}
+
+.tech-category-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
   margin-bottom: 18px;
 }
 
-.skills-list li {
+.tech-pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.tech-pill-accent {
+  border-color: var(--green-deep);
+  color: var(--green-bright);
+}
+
+.pill-note {
+  font-size: 0.68rem;
+  color: var(--green-bright);
+  margin-left: 4px;
+}
+
+/* ============================================
+   FORMAÇÃO
+   ============================================ */
+.formacao-list {
+  display: grid;
+  gap: 16px;
+}
+
+.formacao-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 28px;
+}
+
+.formacao-item-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.formacao-item-top h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.formacao-period {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
-}
-
-.skills-list li:last-child {
-  border-bottom: none;
-}
-
-.skill-note {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--green-bright);
-  background: rgba(74, 222, 128, 0.08);
-  padding: 2px 8px;
-  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.formacao-school {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.formacao-note {
+  font-size: 0.85rem;
+  color: var(--green-bright);
+  font-style: italic;
+  margin-top: 4px;
 }
 
 /* ============================================
@@ -494,14 +639,25 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .about-grid {
+  .hero-grid {
     grid-template-columns: 1fr;
-    justify-items: start;
+    text-align: left;
   }
 
-  .about-photo-wrap {
-    width: 140px;
-    height: 140px;
+  .hero-photo-wrap {
+    order: -1;
+    max-width: 220px;
+    margin: 0 0 32px 0;
+  }
+
+  .tech-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .formacao-item-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .contact-link {
