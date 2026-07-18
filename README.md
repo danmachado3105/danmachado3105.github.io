@@ -18,18 +18,25 @@ Construído com HTML, CSS e JavaScript puro — sem frameworks — como exercíc
 ## Estrutura do projeto
 
 ```
-├── index.html      # Estrutura da página
-├── style.css       # Estilos e responsividade
-├── script.js       # Interações (ano automático no rodapé, destaque de seção no menu)
+├── index.html                        # Estrutura da página
+├── style.css                         # Estilos e responsividade
+├── script.js                         # Interações (ano automático no rodapé, destaque de seção no menu)
 └── assets/
-    └── perfil.jpg  # Foto de perfil
+    ├── perfil.jpg                    # Foto de perfil
+    ├── curriculo_danilo_machado.pdf  # Currículo em PDF (botão de download)
+    ├── favicon.ico
+    ├── favicon-16x16.png
+    ├── favicon-32x32.png
+    ├── favicon-48x48.png
+    └── apple-touch-icon.png
 ```
 
 ## Seções do site
 
-- **Início** — apresentação rápida
+- **Início / Sobre mim** — apresentação, foto, botão de download do currículo e links de contato (GitHub, LinkedIn, e-mail)
+- **Tecnologias** — Front-end, Ferramentas e Inteligência Artificial (uso de IA generativa aplicada a projetos reais)
+- **Formação** — Bacharelado em Engenharia de Software (UVA) e Técnico em Desenvolvimento de Sistemas (UniCesumar)
 - **Projetos** — [Redify](https://github.com/danmachado3105) (SaaS de correção de redações do ENEM com IA) e [Velun AI](https://github.com/danmachado3105) (assistente de IA local com busca semântica)
-- **Sobre** — formação e tecnologias que domino
 - **Contato** — e-mail, LinkedIn e GitHub
 
 ## Rodando localmente
