@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danilo Machado — Desenvolvedor de Software</title>
+  <meta name="description" content="Portfólio de Danilo Machado, estudante de Engenharia de Software construindo produtos reais do zero.">
+
+  <!-- Fontes: Space Grotesk (títulos), Inter (corpo), JetBrains Mono (tags/código) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="#top" class="nav-logo">DM<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="nav-github">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="top" class="hero">
+      <!-- grafo de nós decorativo, mesmo motivo visual usado no banner do LinkedIn -->
+      <svg class="hero-graph" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="graph-lines" stroke="#2e7d32" stroke-width="1" opacity="0.35">
+          <line x1="620" y1="120" x2="720" y2="200" />
+          <line x1="720" y1="200" x2="680" y2="320" />
+          <line x1="680" y1="320" x2="800" y2="360" />
+          <line x1="680" y1="320" x2="600" y2="420" />
+          <line x1="800" y1="360" x2="850" y2="480" />
+          <line x1="600" y1="420" x2="650" y2="520" />
+        </g>
+        <g class="graph-nodes" fill="#4ade80">
+          <circle class="node" cx="620" cy="120" r="5" />
+          <circle class="node" cx="720" cy="200" r="7" />
+          <circle class="node" cx="680" cy="320" r="9" />
+          <circle class="node" cx="800" cy="360" r="5" />
+          <circle class="node" cx="600" cy="420" r="6" />
+          <circle class="node" cx="850" cy="480" r="4" />
+          <circle class="node" cx="650" cy="520" r="5" />
+        </g>
+      </svg>
+
+      <p class="eyebrow">// estudante de engenharia de software</p>
+      <h1 class="hero-title">Aprendo<br>construindo.</h1>
+      <p class="hero-sub">
+        Do planejamento ao deploy, sozinho. Dois produtos reais — um SaaS e um
+        assistente de IA — construídos pra aprender fazendo, não só estudando.
+      </p>
+      <div class="hero-actions">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </section>
+
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos" class="section">
+      <div class="section-heading">
+        <h2>Projetos</h2>
+        <span class="annotation">[ dois lançamentos reais ]</span>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card: Redify -->
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-tag">SaaS</span>
+            <h3>Redify</h3>
+            <p class="project-desc">
+              Plataforma de correção de redações do ENEM com IA. Avalia as 5
+              competências oficiais, calibrada nos critérios reais de correção,
+              com paywall e pagamento integrado via Mercado Pago.
+            </p>
+          </div>
+          <div class="project-card-bottom">
+            <ul class="tech-stack">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>Anthropic API</li>
+              <li>Mercado Pago</li>
+              <li>HTML/CSS/JS</li>
+            </ul>
+            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+              Ver repositório ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Card: Velun AI -->
+        <article class="project-card">
+          <div class="project-card-top">
+            <span class="project-tag">IA local</span>
+            <h3>Velun AI</h3>
+            <p class="project-desc">
+              Assistente de IA local com memória de conversas via busca
+              semântica (RAG) e leitura de documentos enviados pelo usuário
+              (PDF e Word).
+            </p>
+          </div>
+          <div class="project-card-bottom">
+            <ul class="tech-stack">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>React</li>
+              <li>ChromaDB</li>
+              <li>Ollama</li>
+            </ul>
+            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+              Ver repositório ↗
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="section">
+      <div class="section-heading">
+        <h2>Sobre</h2>
+        <span class="annotation">[ quem constrói ]</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <img src="assets/perfil.jpg" alt="Foto de Danilo Machado" class="about-photo">
+        </div>
+
+        <p class="about-text">
+          Sou estudante de Engenharia de Software e técnico em Desenvolvimento
+          de Sistemas. Gosto de aprender construindo — colocar a mão na massa
+          em projetos próprios, do planejamento até a entrega final, é como
+          consolido o que estudo na prática. Hoje estou aprofundando front-end
+          (HTML, CSS, JavaScript) e dando os primeiros passos em Python, com
+          o objetivo de me tornar um desenvolvedor full stack.
+        </p>
+
+        <div class="skills-box">
+          <h3 class="skills-title">Tecnologias</h3>
+          <ul class="skills-list">
+            <li><span class="skill-name">HTML</span></li>
+            <li><span class="skill-name">CSS</span></li>
+            <li><span class="skill-name">JavaScript</span></li>
+            <li><span class="skill-name">Git &amp; GitHub</span></li>
+            <li><span class="skill-name">Python</span><span class="skill-note">aprendendo</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato" class="section section-contact">
+      <div class="section-heading">
+        <h2>Contato</h2>
+        <span class="annotation">[ bora conversar ]</span>
+      </div>
+
+      <p class="contact-lead">
+        Estou em busca da minha primeira oportunidade de estágio em
+        desenvolvimento. Se meu trabalho fez sentido pra sua equipe, vamos
+        conversar.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:danilomachado1227@gmail.com" class="contact-link">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">danilomachado1227@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">in/danilomachado3105</span>
+        </a>
+        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">danmachado3105</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Danilo Machado — <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
