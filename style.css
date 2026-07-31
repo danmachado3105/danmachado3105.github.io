@@ -116,10 +116,11 @@ button:focus-visible {
   font-size: 0.95rem;
   color: var(--text-muted);
   transition: color 0.2s ease;
+  color: var(--green-bright);
 }
 
 .nav-links a:hover {
-  color: var(--green-bright);
+  color: var(--green-deep);
 }
 
 .nav-github {
@@ -368,7 +369,7 @@ button:focus-visible {
 }
 
 .project-link:hover {
-  text-decoration: underline;
+  color: var(--green-deep);
 }
 
 /* ============================================
@@ -616,6 +617,11 @@ button:focus-visible {
   border-radius: 10px;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
+
+.contact-value:hover {
+  text-decoration: underline;
+}
+
 
 .contact-link:hover {
   border-color: var(--green-deep);
