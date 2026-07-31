@@ -120,7 +120,7 @@ button:focus-visible {
 }
 
 .nav-links a:hover {
-  color: var(--green-deep);
+  color: #d4fdd1;
 }
 
 .nav-github {
