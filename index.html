@@ -33,7 +33,10 @@
         <li><a href="#projetos">Projetos</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
-      <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="nav-github">GitHub ↗</a>
+      <div class="nav-cta-group">
+        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="nav-github">GitHub ↗</a>
+        <a href="assets/curriculo_danilo_machado.pdf" download class="nav-cv-btn">Baixar CV</a>
+      </div>
     </nav>
   </header>
 
@@ -41,33 +44,12 @@
 
     <!-- ===== HERO / SOBRE MIM ===== -->
     <section id="top" class="hero">
-      <!-- grafo de nós decorativo, mesmo motivo visual usado no banner do LinkedIn -->
-      <svg class="hero-graph" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g class="graph-lines" stroke="#2e7d32" stroke-width="1" opacity="0.35">
-          <line x1="620" y1="120" x2="720" y2="200" />
-          <line x1="720" y1="200" x2="680" y2="320" />
-          <line x1="680" y1="320" x2="800" y2="360" />
-          <line x1="680" y1="320" x2="600" y2="420" />
-          <line x1="800" y1="360" x2="850" y2="480" />
-          <line x1="600" y1="420" x2="650" y2="520" />
-        </g>
-        <g class="graph-nodes" fill="#4ade80">
-          <circle class="node" cx="620" cy="120" r="5" />
-          <circle class="node" cx="720" cy="200" r="7" />
-          <circle class="node" cx="680" cy="320" r="9" />
-          <circle class="node" cx="800" cy="360" r="5" />
-          <circle class="node" cx="600" cy="420" r="6" />
-          <circle class="node" cx="850" cy="480" r="4" />
-          <circle class="node" cx="650" cy="520" r="5" />
-        </g>
-      </svg>
-
       <div id="sobre" class="hero-grid">
         <div class="hero-content">
-          <p class="eyebrow">// Desenvolvedor de Software</p>
+          <p class="eyebrow">// desenvolvedor de software</p>
           <h1 class="hero-title">
-            Olá, eu sou <span class="highlight">Danilo Machado</span><br>
-            Desenvolvedor de Software
+            Olá, eu sou <span class="highlight">Danilo</span><br>
+            Construo experiências para a web.
           </h1>
           <p class="hero-sub">
             Estudante de Engenharia de Software e técnico em Desenvolvimento de
@@ -75,109 +57,98 @@
             dando os primeiros passos em Python e Inteligência Artificial
             aplicada a projetos reais. Gosto de aprender construindo — colocar
             a mão na massa, do planejamento até a entrega, é como consolido o
-            que estudo na prática. Meu objetivo agora é conquistar minha
-            primeira oportunidade de estágio em desenvolvimento, aplicar esse
-            aprendizado em equipe e crescer como desenvolvedor full stack.
+            que estudo na prática.
           </p>
 
           <div class="hero-actions">
-            <a href="assets/curriculo_danilo_machado..pdf" download class="btn btn-primary">
+            <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+            <a href="assets/curriculo_danilo_machado.pdf" download class="btn btn-ghost">
               ↓ Baixar Currículo
             </a>
+          </div>
 
-            <div class="social-icons">
-              <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
-                </svg>
-              </a>
-              <a href="mailto:danilomachado1227@gmail.com" aria-label="Email" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <path d="m2 6 10 7 10-7"/>
-                </svg>
-              </a>
+          <div class="hero-tech-strip">
+            <span class="hero-tech-label">Tecnologias que uso</span>
+            <div class="hero-tech-icons">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" loading="lazy">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" loading="lazy">
             </div>
+          </div>
+
+          <div class="social-icons">
+            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
+              </svg>
+            </a>
+            <a href="mailto:danilomachado1227@gmail.com" aria-label="Email" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m2 6 10 7 10-7"/>
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="hero-photo-wrap">
-          <div class="hero-photo-glow"></div>
+          <div class="hero-photo-blob"></div>
+          <!-- grafo de nós decorativo, mesmo motivo visual usado no banner do LinkedIn -->
+          <svg class="hero-graph" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g class="graph-lines" stroke="#4ade80" stroke-width="1" opacity="0.45">
+              <line x1="30" y1="40" x2="80" y2="70" />
+              <line x1="80" y1="70" x2="60" y2="130" />
+              <line x1="250" y1="30" x2="270" y2="90" />
+            </g>
+            <g class="graph-nodes" fill="#4ade80">
+              <circle class="node" cx="30" cy="40" r="4" />
+              <circle class="node" cx="80" cy="70" r="6" />
+              <circle class="node" cx="60" cy="130" r="4" />
+              <circle class="node" cx="250" cy="30" r="4" />
+              <circle class="node" cx="270" cy="90" r="5" />
+            </g>
+          </svg>
           <img src="assets/perfil.jpg" alt="Foto de Danilo Machado" class="hero-photo">
+
+          <div class="hero-code-card" aria-hidden="true">
+            <div class="hero-code-dots"><span></span><span></span><span></span></div>
+            <pre class="hero-code-text"><span class="code-kw">const</span> dev = {
+  name: <span class="code-str">'Danilo'</span>,
+  stack: [<span class="code-str">'HTML'</span>, <span class="code-str">'CSS'</span>, <span class="code-str">'JS'</span>],
+  learning: <span class="code-str">'Python'</span>
+};</pre>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===== PROJETOS ===== -->
-    <section id="projetos" class="section">
-      <div class="section-heading">
-        <h2>Projetos</h2>
-        <span class="annotation">[ dois lançamentos reais ]</span>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Card: Redify -->
-        <article class="project-card">
-          <div class="project-card-image">
-            <img src="assets/Redify.png" alt="Tela do Redify" loading="lazy">
-          </div>
-          <div class="project-card-top">
-            <span class="project-tag">SaaS</span>
-            <h3>Redify</h3>
-            <p class="project-desc">
-              Plataforma de correção de redações do ENEM com IA. Avalia as 5
-              competências oficiais, calibrada nos critérios reais de correção,
-              com paywall e pagamento integrado via Mercado Pago.
-            </p>
-          </div>
-          <div class="project-card-bottom">
-            <ul class="tech-stack">
-              <li>Python</li>
-              <li>FastAPI</li>
-              <li>Anthropic API</li>
-              <li>Mercado Pago</li>
-              <li>HTML/CSS/JS</li>
-            </ul>
-            <a href="https://github.com/danmachado3105/Redify-app" target="_blank" rel="noopener" class="project-link">
-              Ver repositório ↗
-            </a>
-          </div>
-        </article>
-
-        <!-- Card: Velun AI -->
-        <article class="project-card">
-          <div class="project-card-image">
-            <img src="assets/velun-ai.png" alt="Tela do Velun AI" loading="lazy">
-          </div>
-          <div class="project-card-top">
-            <span class="project-tag">IA local</span>
-            <h3>Velun AI</h3>
-            <p class="project-desc">
-              Assistente de IA local com memória de conversas via busca
-              semântica (RAG) e leitura de documentos enviados pelo usuário
-              (PDF e Word).
-            </p>
-          </div>
-          <div class="project-card-bottom">
-            <ul class="tech-stack">
-              <li>Python</li>
-              <li>FastAPI</li>
-              <li>React</li>
-              <li>ChromaDB</li>
-              <li>Ollama</li>
-            </ul>
-            <a href="https://github.com/danmachado3105/Velun-AI" target="_blank" rel="noopener" class="project-link">
-              Ver repositório ↗
-            </a>
-          </div>
-        </article>
-
+      <!-- Tira de estatísticas — números reais, sem inflar experiência -->
+      <div class="stats-strip">
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Projetos reais construídos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Tecnologias em uso</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Construído do zero</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">1º</span>
+          <span class="stat-label">Período — Eng. de Software</span>
+        </div>
       </div>
     </section>
 
@@ -186,6 +157,29 @@
       <div class="section-heading">
         <h2>Tecnologias</h2>
         <span class="annotation">[ o que já sei aplicar ]</span>
+      </div>
+
+      <div class="skill-bars">
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>HTML</span><span class="skill-bar-tag">Confiante</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>CSS</span><span class="skill-bar-tag">Confiante</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 85%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>JavaScript</span><span class="skill-bar-tag">Confiante</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Git &amp; GitHub</span><span class="skill-bar-tag">Confiante</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 78%"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-top"><span>Python</span><span class="skill-bar-tag skill-bar-tag-learning">Aprendendo</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill skill-bar-fill-learning" style="width: 35%"></div></div>
+        </div>
       </div>
 
       <div class="tech-columns">
@@ -260,6 +254,76 @@
           </div>
           <p class="formacao-school">UniCesumar</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos" class="section">
+      <div class="section-heading">
+        <h2>Projetos</h2>
+        <span class="annotation">[ dois lançamentos reais ]</span>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card: Redify -->
+        <article class="project-card">
+          <div class="project-card-image">
+            <span class="project-number">01</span>
+            <img src="assets/redify-preview.jpg" alt="Tela do Redify" loading="lazy">
+          </div>
+          <div class="project-card-top">
+            <span class="project-tag">SaaS</span>
+            <h3>Redify</h3>
+            <p class="project-desc">
+              Plataforma de correção de redações do ENEM com IA. Avalia as 5
+              competências oficiais, calibrada nos critérios reais de correção,
+              com paywall e pagamento integrado via Mercado Pago.
+            </p>
+          </div>
+          <div class="project-card-bottom">
+            <ul class="tech-stack">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>Anthropic API</li>
+              <li>Mercado Pago</li>
+              <li>HTML/CSS/JS</li>
+            </ul>
+            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+              Ver repositório ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Card: Velun AI -->
+        <article class="project-card">
+          <div class="project-card-image">
+            <span class="project-number">02</span>
+            <img src="assets/velun-preview.jpg" alt="Tela do Velun AI" loading="lazy">
+          </div>
+          <div class="project-card-top">
+            <span class="project-tag">IA local</span>
+            <h3>Velun AI</h3>
+            <p class="project-desc">
+              Assistente de IA local com memória de conversas via busca
+              semântica (RAG) e leitura de documentos enviados pelo usuário
+              (PDF e Word).
+            </p>
+          </div>
+          <div class="project-card-bottom">
+            <ul class="tech-stack">
+              <li>Python</li>
+              <li>FastAPI</li>
+              <li>React</li>
+              <li>ChromaDB</li>
+              <li>Ollama</li>
+            </ul>
+            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+              Ver repositório ↗
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
