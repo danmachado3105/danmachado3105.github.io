@@ -113,8 +113,10 @@ button:focus-visible {
 }
 
 .nav-links a {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   transition: color 0.2s ease;
 }
 
@@ -164,7 +166,7 @@ button:focus-visible {
    ============================================ */
 .hero {
   position: relative;
-  padding-top: 140px;
+  padding-top: 64px;
   padding-bottom: 140px;
   overflow: hidden;
 }
@@ -209,9 +211,10 @@ button:focus-visible {
   z-index: 1;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: uppercase;
   margin-bottom: 20px;
   max-width: 700px;
 }
@@ -438,6 +441,37 @@ button:focus-visible {
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
+}
+
+.hero-tech-strip {
+  margin-bottom: 28px;
+}
+
+.hero-tech-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.hero-tech-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-tech-icons img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.hero-tech-icons img:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .social-icons {
