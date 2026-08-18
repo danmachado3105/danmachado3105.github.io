@@ -130,29 +130,6 @@ button:focus-visible {
   gap: 10px;
 }
 
-.nav-icon-btn {
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-muted);
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-icon-btn svg {
-  width: 17px;
-  height: 17px;
-}
-
-.nav-icon-btn:hover {
-  color: var(--green-bright);
-  border-color: var(--green-deep);
-  transform: translateY(-1px);
-}
-
 .nav-cv-btn {
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -168,6 +145,20 @@ button:focus-visible {
   background: var(--green-bright);
   color: #0a0f0d;
   transform: translateY(-1px);
+}
+
+.nav-github {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  padding: 7px 14px;
+  border-radius: 6px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-github:hover {
+  border-color: var(--green-bright);
+  color: var(--green-bright);
 }
 
 
@@ -242,7 +233,8 @@ button:focus-visible {
   position: relative;
   z-index: 1;
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -449,7 +441,6 @@ button:focus-visible {
 .social-icons {
   display: flex;
   gap: 14px;
-  margin-top: 24px;
 }
 
 .social-icon {
@@ -478,9 +469,9 @@ button:focus-visible {
 .hero-photo-wrap {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 370px;
   aspect-ratio: 1 / 1;
-  margin: 12px auto 0;
+  margin: 56px auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -824,10 +815,14 @@ button:focus-visible {
   }
 
   .hero-code-card {
-    width: 195px;
+    width: 250px;
     left: 50%;
     transform: translateX(-50%);
     bottom: -20%;
+  }
+
+  .hero-code-text {
+    font-size: 0.68rem;
   }
 
   .tech-columns {
