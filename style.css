@@ -558,50 +558,6 @@ button:focus-visible {
 /* ============================================
    TECNOLOGIAS
    ============================================ */
-.skill-bars {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 40px;
-  margin-bottom: 40px;
-}
-
-.skill-bar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-}
-
-.skill-bar-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--green-bright);
-}
-
-.skill-bar-tag-learning {
-  color: var(--text-muted);
-}
-
-.skill-bar-track {
-  width: 100%;
-  height: 6px;
-  border-radius: 4px;
-  background: var(--border);
-  overflow: hidden;
-}
-
-.skill-bar-fill {
-  height: 100%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--green-deep), var(--green-bright));
-}
-
-.skill-bar-fill-learning {
-  background: var(--text-muted);
-  opacity: 0.6;
-}
-
 .tech-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -667,11 +623,7 @@ button:focus-visible {
   color: var(--green-bright);
 }
 
-.pill-note {
-  font-size: 0.68rem;
-  color: var(--green-bright);
-  margin-left: 4px;
-}
+
 
 /* ============================================
    FORMAÇÃO
