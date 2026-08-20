@@ -439,24 +439,42 @@ button:focus-visible {
    ============================================ */
 .section-heading {
   display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  margin-bottom: 56px;
 }
 
 .section-heading h2 {
+  order: 2;
+  position: relative;
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding-bottom: 18px;
+}
+
+.section-heading h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--green-deep), var(--green-bright));
 }
 
 .annotation {
+  order: 1;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--green-bright);
-  border-left: 2px solid var(--green-deep);
-  padding-left: 10px;
 }
 
 /* ============================================
@@ -482,7 +500,7 @@ button:focus-visible {
 
 .projects-grid .project-card {
   flex: 0 0 auto;
-  width: min(420px, 82vw);
+  width: min(320px, 78vw);
   scroll-snap-align: start;
 }
 
@@ -548,7 +566,7 @@ button:focus-visible {
 .project-card-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--bg-soft);
   border-bottom: 1px solid var(--border);
@@ -582,51 +600,24 @@ button:focus-visible {
 }
 
 .project-card-top {
-  padding: 28px 32px 0;
+  padding: 20px 22px 0;
 }
 
 .project-card-bottom {
-  padding: 0 32px 32px;
-}
-
-.project-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--green-bright);
-  background: rgba(74, 222, 128, 0.08);
-  border: 1px solid rgba(74, 222, 128, 0.25);
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 16px;
+  padding: 0 22px 22px;
 }
 
 .project-card h3 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  margin-bottom: 12px;
+  font-size: 1.25rem;
+  margin-top: 6px;
+  margin-bottom: 10px;
 }
 
 .project-desc {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.tech-stack li {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
 }
 
 .project-link {
