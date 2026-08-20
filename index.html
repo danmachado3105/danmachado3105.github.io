@@ -22,6 +22,17 @@
 </head>
 <body>
 
+  <!-- Fundo ambiente: brilhos verdes sutis e fixos, atrás de todo o conteúdo -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+    <div class="bg-blob bg-blob-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- Barra de progresso de leitura -->
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgress"></div></div>
+
   <!-- ===== HEADER / NAV ===== -->
   <header class="site-header">
     <nav class="nav-container">
@@ -117,16 +128,34 @@
       </div>
     </section>
 
+    <!-- ===== FAIXA EM MOVIMENTO ===== -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>HTML</span><span class="marquee-dot">•</span>
+        <span>CSS</span><span class="marquee-dot">•</span>
+        <span>JAVASCRIPT</span><span class="marquee-dot">•</span>
+        <span>GIT &amp; GITHUB</span><span class="marquee-dot">•</span>
+        <span>IA APLICADA</span><span class="marquee-dot">•</span>
+        <span>SEMPRE APRENDENDO</span><span class="marquee-dot">•</span>
+        <span>HTML</span><span class="marquee-dot">•</span>
+        <span>CSS</span><span class="marquee-dot">•</span>
+        <span>JAVASCRIPT</span><span class="marquee-dot">•</span>
+        <span>GIT &amp; GITHUB</span><span class="marquee-dot">•</span>
+        <span>IA APLICADA</span><span class="marquee-dot">•</span>
+        <span>SEMPRE APRENDENDO</span><span class="marquee-dot">•</span>
+      </div>
+    </div>
+
     <!-- ===== TECNOLOGIAS ===== -->
     <section id="tecnologias" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2>Tecnologias</h2>
         <span class="annotation">[ o que já sei aplicar ]</span>
       </div>
 
       <div class="tech-columns">
 
-        <div class="tech-category">
+        <div class="tech-category reveal">
           <h3 class="tech-category-title">Front-end</h3>
           <p class="tech-category-desc">
             Construo interfaces web do zero, estruturando marcação semântica
@@ -139,7 +168,7 @@
           </ul>
         </div>
 
-        <div class="tech-category">
+        <div class="tech-category reveal">
           <h3 class="tech-category-title">Ferramentas</h3>
           <p class="tech-category-desc">
             Controle de versão e lógica de programação são a base de tudo
@@ -152,7 +181,7 @@
           </ul>
         </div>
 
-        <div class="tech-category tech-category-highlight">
+        <div class="tech-category tech-category-highlight reveal">
           <h3 class="tech-category-title">
             Inteligência Artificial
             <span class="diff-tag">diferencial</span>
@@ -174,13 +203,13 @@
 
     <!-- ===== FORMAÇÃO ===== -->
     <section id="formacao" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2>Formação</h2>
         <span class="annotation">[ de onde venho ]</span>
       </div>
 
       <div class="formacao-list">
-        <div class="formacao-item">
+        <div class="formacao-item reveal">
           <div class="formacao-item-top">
             <h3>Bacharelado em Engenharia de Software</h3>
             <span class="formacao-period">Ago/2026 – Presente</span>
@@ -189,7 +218,7 @@
           <p class="formacao-note">Bolsista ProUni</p>
         </div>
 
-        <div class="formacao-item">
+        <div class="formacao-item reveal">
           <div class="formacao-item-top">
             <h3>Técnico em Desenvolvimento de Sistemas</h3>
             <span class="formacao-period">2024 – 2026</span>
@@ -201,7 +230,7 @@
 
     <!-- ===== PROJETOS ===== -->
     <section id="projetos" class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2>Projetos</h2>
         <span class="annotation">[ dois lançamentos reais ]</span>
       </div>
@@ -209,7 +238,7 @@
       <div class="projects-grid">
 
         <!-- Card: Redify -->
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-card-image">
             <span class="project-number">01</span>
             <img src="assets/Redify.png" alt="Tela do Redify" loading="lazy">
@@ -238,7 +267,7 @@
         </article>
 
         <!-- Card: Velun AI -->
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-card-image">
             <span class="project-number">02</span>
             <img src="assets/velun-ai.png" alt="Tela do Velun AI" loading="lazy">
@@ -271,7 +300,7 @@
 
     <!-- ===== CONTATO ===== -->
     <section id="contato" class="section section-contact">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <h2>Contato</h2>
         <span class="annotation">[ bora conversar ]</span>
       </div>
@@ -283,15 +312,15 @@
       </p>
 
       <div class="contact-links">
-        <a href="mailto:danilomachado1227@gmail.com" class="contact-link">
+        <a href="mailto:danilomachado1227@gmail.com" class="contact-link reveal">
           <span class="contact-label">Email</span>
           <span class="contact-value">danilomachado1227@gmail.com</span>
         </a>
-        <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" class="contact-link">
+        <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" class="contact-link reveal">
           <span class="contact-label">LinkedIn</span>
           <span class="contact-value">in/danilomachado3105</span>
         </a>
-        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="contact-link">
+        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="contact-link reveal">
           <span class="contact-label">GitHub</span>
           <span class="contact-value">danmachado3105</span>
         </a>
