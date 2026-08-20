@@ -232,69 +232,128 @@
     <section id="projetos" class="section">
       <div class="section-heading reveal">
         <h2>Projetos</h2>
-        <span class="annotation">[ dois lançamentos reais ]</span>
+        <span class="annotation">[ quatro lançamentos reais ]</span>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-carousel-wrap">
+        <button class="carousel-arrow carousel-arrow-prev" id="carouselPrev" aria-label="Projeto anterior">‹</button>
+        <button class="carousel-arrow carousel-arrow-next" id="carouselNext" aria-label="Próximo projeto">›</button>
 
-        <!-- Card: Redify -->
-        <article class="project-card reveal">
-          <div class="project-card-image">
-            <span class="project-number">01</span>
-            <img src="assets/Redify.png" alt="Tela do Redify" loading="lazy">
-          </div>
-          <div class="project-card-top">
-            <span class="project-tag">SaaS</span>
-            <h3>Redify</h3>
-            <p class="project-desc">
-              Plataforma de correção de redações do ENEM com IA. Avalia as 5
-              competências oficiais, calibrada nos critérios reais de correção,
-              com paywall e pagamento integrado via Mercado Pago.
-            </p>
-          </div>
-          <div class="project-card-bottom">
-            <ul class="tech-stack">
-              <li>Python</li>
-              <li>FastAPI</li>
-              <li>Anthropic API</li>
-              <li>Mercado Pago</li>
-              <li>HTML/CSS/JS</li>
-            </ul>
-            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
-              Ver repositório ↗
-            </a>
-          </div>
-        </article>
+        <div class="projects-grid" id="projectsTrack">
 
-        <!-- Card: Velun AI -->
-        <article class="project-card reveal">
-          <div class="project-card-image">
-            <span class="project-number">02</span>
-            <img src="assets/velun-ai.png" alt="Tela do Velun AI" loading="lazy">
-          </div>
-          <div class="project-card-top">
-            <span class="project-tag">IA local</span>
-            <h3>Velun AI</h3>
-            <p class="project-desc">
-              Assistente de IA local com memória de conversas via busca
-              semântica (RAG) e leitura de documentos enviados pelo usuário
-              (PDF e Word).
-            </p>
-          </div>
-          <div class="project-card-bottom">
-            <ul class="tech-stack">
-              <li>Python</li>
-              <li>FastAPI</li>
-              <li>React</li>
-              <li>ChromaDB</li>
-              <li>Ollama</li>
-            </ul>
-            <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
-              Ver repositório ↗
-            </a>
-          </div>
-        </article>
+          <!-- Card: Redify -->
+          <article class="project-card reveal">
+            <div class="project-card-image">
+              <span class="project-number">01</span>
+              <img src="assets/Redify.png" alt="Tela do Redify" loading="lazy">
+            </div>
+            <div class="project-card-top">
+              <span class="project-tag">SaaS</span>
+              <h3>Redify</h3>
+              <p class="project-desc">
+                Plataforma de correção de redações do ENEM com IA. Avalia as 5
+                competências oficiais, calibrada nos critérios reais de correção,
+                com paywall e pagamento integrado via Mercado Pago.
+              </p>
+            </div>
+            <div class="project-card-bottom">
+              <ul class="tech-stack">
+                <li>Python</li>
+                <li>FastAPI</li>
+                <li>Anthropic API</li>
+                <li>Mercado Pago</li>
+                <li>HTML/CSS/JS</li>
+              </ul>
+              <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+                Ver repositório ↗
+              </a>
+            </div>
+          </article>
 
+          <!-- Card: Velun AI -->
+          <article class="project-card reveal">
+            <div class="project-card-image">
+              <span class="project-number">02</span>
+              <img src="assets/velun-ai.png" alt="Tela do Velun AI" loading="lazy">
+            </div>
+            <div class="project-card-top">
+              <span class="project-tag">IA local</span>
+              <h3>Velun AI</h3>
+              <p class="project-desc">
+                Assistente de IA local com memória de conversas via busca
+                semântica (RAG) e leitura de documentos enviados pelo usuário
+                (PDF e Word).
+              </p>
+            </div>
+            <div class="project-card-bottom">
+              <ul class="tech-stack">
+                <li>Python</li>
+                <li>FastAPI</li>
+                <li>React</li>
+                <li>ChromaDB</li>
+                <li>Ollama</li>
+              </ul>
+              <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+                Ver repositório ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Card: Velun Tech -->
+          <article class="project-card reveal">
+            <div class="project-card-image">
+              <span class="project-number">03</span>
+              <img src="assets/Velun-tech.png" alt="Tela do Velun Tech" loading="lazy">
+            </div>
+            <div class="project-card-top">
+              <span class="project-tag">Site institucional</span>
+              <h3>Velun Tech</h3>
+              <p class="project-desc">
+                Site institucional para uma agência de desenvolvimento web
+                voltada a pequenos negócios, com diagrama animado do processo,
+                comparativo antes/depois e planos de investimento.
+              </p>
+            </div>
+            <div class="project-card-bottom">
+              <ul class="tech-stack">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <a href="https://veluntech.netlify.app" target="_blank" rel="noopener" class="project-link">
+                Ver site ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Card: Velun ZAP -->
+          <article class="project-card reveal">
+            <div class="project-card-image">
+              <span class="project-number">04</span>
+              <img src="assets/Velun-zap.png" alt="Tela do Velun ZAP" loading="lazy">
+            </div>
+            <div class="project-card-top">
+              <span class="project-tag">Landing page</span>
+              <h3>Velun ZAP</h3>
+              <p class="project-desc">
+                Landing page de um assistente com IA para atendimento
+                automático no WhatsApp, simulando conversas reais de
+                qualificação de clientes para pequenos negócios.
+              </p>
+            </div>
+            <div class="project-card-bottom">
+              <ul class="tech-stack">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <a href="https://velunzap.netlify.app" target="_blank" rel="noopener" class="project-link">
+                Ver site ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 

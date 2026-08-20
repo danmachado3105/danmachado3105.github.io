@@ -81,3 +81,19 @@ function updateScrollProgress() {
 
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
+
+// Carrossel de projetos — setas rolam a trilha horizontalmente
+const projectsTrack = document.getElementById('projectsTrack');
+const carouselPrev = document.getElementById('carouselPrev');
+const carouselNext = document.getElementById('carouselNext');
+
+if (projectsTrack && carouselPrev && carouselNext) {
+  const scrollByCard = (direction) => {
+    const card = projectsTrack.querySelector('.project-card');
+    const cardWidth = card ? card.getBoundingClientRect().width + 24 : 400; // 24px = gap
+    projectsTrack.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+  };
+
+  carouselPrev.addEventListener('click', () => scrollByCard(-1));
+  carouselNext.addEventListener('click', () => scrollByCard(1));
+}
