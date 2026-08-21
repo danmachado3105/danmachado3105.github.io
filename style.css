@@ -480,40 +480,32 @@ button:focus-visible {
 /* ============================================
    PROJETOS
    ============================================ */
-.projects-carousel-wrap {
-  position: relative;
+.projects-viewport {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1128px; /* 3 cards de 360px + 2 gaps de 24px */
+  margin: 0 auto;
 }
 
 .projects-grid {
   display: flex;
   gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding-bottom: 8px;
-  scrollbar-width: none;
+  width: max-content;
 }
 
-.projects-grid::-webkit-scrollbar {
-  display: none;
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
 }
 
-.projects-grid .project-card {
-  flex: 0 0 auto;
-  width: min(320px, 78vw);
-  scroll-snap-align: start;
-}
-
-.carousel-arrow {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  z-index: 3;
+.carousel-btn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
   color: var(--text);
   font-size: 1.5rem;
   line-height: 1;
@@ -521,28 +513,13 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  backdrop-filter: blur(6px);
   transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
-.carousel-arrow:hover {
+.carousel-btn:hover {
   border-color: var(--green-bright);
   color: var(--green-bright);
-  transform: translateY(-50%) scale(1.08);
-}
-
-.carousel-arrow-prev {
-  left: -14px;
-}
-
-.carousel-arrow-next {
-  right: -14px;
-}
-
-@media (max-width: 900px) {
-  .carousel-arrow {
-    display: none;
-  }
+  transform: scale(1.08);
 }
 
 .project-card {
@@ -551,6 +528,9 @@ button:focus-visible {
   border-radius: 14px;
   padding: 0;
   overflow: hidden;
+  width: 360px;
+  height: 400px;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -566,7 +546,7 @@ button:focus-visible {
 .project-card-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 180px;
   overflow: hidden;
   background: var(--bg-soft);
   border-bottom: 1px solid var(--border);
@@ -618,6 +598,10 @@ button:focus-visible {
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .project-link {
@@ -967,8 +951,13 @@ button:focus-visible {
     right: -220px;
   }
 
-  .projects-grid .project-card {
-    width: 86vw;
+  .project-card {
+    width: 82vw;
+    height: 380px;
+  }
+
+  .projects-viewport {
+    max-width: 100%;
   }
 
   .hero-grid {

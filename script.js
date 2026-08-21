@@ -82,18 +82,83 @@ function updateScrollProgress() {
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
 
-// Carrossel de projetos — setas rolam a trilha horizontalmente
+// Carrossel de projetos — looping automático e contínuo, com setas para acelerar manualmente
+const projectsViewport = document.getElementById('projectsViewport');
 const projectsTrack = document.getElementById('projectsTrack');
 const carouselPrev = document.getElementById('carouselPrev');
 const carouselNext = document.getElementById('carouselNext');
 
-if (projectsTrack && carouselPrev && carouselNext) {
-  const scrollByCard = (direction) => {
-    const card = projectsTrack.querySelector('.project-card');
-    const cardWidth = card ? card.getBoundingClientRect().width + 24 : 400; // 24px = gap
-    projectsTrack.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-  };
+if (projectsViewport && projectsTrack && carouselPrev && carouselNext) {
+  const totalCards = projectsTrack.children.length;
+  const originalCount = totalCards / 2; // a trilha tem os cards originais + uma cópia pro loop
 
-  carouselPrev.addEventListener('click', () => scrollByCard(-1));
-  carouselNext.addEventListener('click', () => scrollByCard(1));
+  let cardStep = 0;   // largura de 1 card + gap, em px
+  let setWidth = 0;   // largura de um "conjunto" completo (metade da trilha)
+  let offset = 0;      // posição atual de rolagem
+  let targetOffset = null; // usado só durante um clique manual nas setas
+  let paused = prefersReducedMotion; // não roda sozinho se o usuário prefere menos movimento
+  let lastTime = null;
+
+  const AUTO_SPEED = 26; // px por segundo — bem devagar, dá pra ler com calma
+  const MANUAL_EASE = 0.12; // velocidade da animação ao clicar nas setas
+
+  function measure() {
+    if (originalCount === 0) return;
+    const first = projectsTrack.children[0];
+    const second = projectsTrack.children[1];
+    cardStep = second.offsetLeft - first.offsetLeft;
+    setWidth = cardStep * originalCount;
+  }
+
+  function wrap() {
+    if (setWidth <= 0) return;
+    if (offset >= setWidth) {
+      offset -= setWidth;
+      if (targetOffset !== null) targetOffset -= setWidth;
+    }
+    if (offset < 0) {
+      offset += setWidth;
+      if (targetOffset !== null) targetOffset += setWidth;
+    }
+  }
+
+  function frame(time) {
+    if (lastTime === null) lastTime = time;
+    const dt = (time - lastTime) / 1000;
+    lastTime = time;
+
+    if (targetOffset !== null) {
+      const diff = targetOffset - offset;
+      offset += diff * Math.min(MANUAL_EASE * (dt * 60), 1);
+      if (Math.abs(diff) < 0.5) {
+        offset = targetOffset;
+        targetOffset = null;
+      }
+    } else if (!paused) {
+      offset += AUTO_SPEED * dt;
+    }
+
+    wrap();
+    projectsTrack.style.transform = `translateX(${-offset}px)`;
+    requestAnimationFrame(frame);
+  }
+
+  measure();
+  requestAnimationFrame(frame);
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+
+  carouselNext.addEventListener('click', () => {
+    const base = targetOffset !== null ? targetOffset : offset;
+    targetOffset = base + cardStep;
+  });
+
+  carouselPrev.addEventListener('click', () => {
+    const base = targetOffset !== null ? targetOffset : offset;
+    targetOffset = base - cardStep;
+  });
+
+  // Pausa o avanço automático enquanto o mouse estiver sobre os cards
+  projectsViewport.addEventListener('mouseenter', () => { paused = true; });
+  projectsViewport.addEventListener('mouseleave', () => { paused = false; });
 }
