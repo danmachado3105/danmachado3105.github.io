@@ -722,11 +722,72 @@ button:focus-visible {
   gap: 24px;
 }
 
-.tech-category {
-  background: var(--card);
-  border: 1px solid var(--border);
+/* Card com efeito de "virar" (flip 3D) ao passar o mouse */
+.tech-card {
+  perspective: 1200px;
+  height: 300px;
+}
+
+.tech-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.tech-card:hover .tech-card-inner,
+.tech-card.is-flipped .tech-card-inner {
+  transform: rotateY(180deg);
+}
+
+.tech-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
   padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tech-card-front {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.tech-glyph {
+  font-family: var(--font-mono);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--green-bright);
+  line-height: 1;
+}
+
+.tech-flip-hint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.tech-card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  border-color: var(--green-deep);
+  background: linear-gradient(160deg, rgba(46, 230, 115, 0.07), var(--card) 60%);
+}
+
+.tech-card:hover .tech-card-face.tech-card-front {
+  border-color: var(--green-bright);
+}
+
+.tech-card-highlight .tech-card-front,
+.tech-card-highlight .tech-card-back {
+  border-color: var(--green-deep);
 }
 
 .tech-category-title {
@@ -737,6 +798,11 @@ button:focus-visible {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.tech-card-front .tech-category-title {
+  margin-bottom: 0;
+  font-size: 1.05rem;
 }
 
 .diff-tag {
@@ -750,15 +816,10 @@ button:focus-visible {
   border-radius: 20px;
 }
 
-.tech-category-highlight {
-  border-color: var(--green-deep);
-  background: linear-gradient(160deg, rgba(74, 222, 128, 0.06), var(--card) 55%);
-}
-
 .tech-category-desc {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .tech-pill-list {
@@ -769,10 +830,10 @@ button:focus-visible {
 
 .tech-pill {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text);
   border: 1px solid var(--border);
-  padding: 6px 12px;
+  padding: 5px 11px;
   border-radius: 20px;
 }
 
@@ -780,8 +841,6 @@ button:focus-visible {
   border-color: var(--green-deep);
   color: var(--green-bright);
 }
-
-
 
 /* ============================================
    FORMAÇÃO

@@ -82,6 +82,13 @@ function updateScrollProgress() {
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 updateScrollProgress();
 
+// Cards de tecnologia: no toque (mobile) alterna o flip com um tap,
+// já que hover não existe de verdade em telas touch
+document.querySelectorAll('.tech-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-flipped');
+  });
+});
 // Carrossel de projetos — looping automático e contínuo, com setas para acelerar manualmente
 const projectsViewport = document.getElementById('projectsViewport');
 const projectsTrack = document.getElementById('projectsTrack');
