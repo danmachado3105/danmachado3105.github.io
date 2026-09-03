@@ -2,16 +2,16 @@
    TOKENS — variáveis de design
    ============================================ */
 :root {
-  --bg: #000000;
-  --bg-soft: #0a0a0a;
-  --card: #0d0d0d;
-  --border: #272727;
+  --bg: #05070f;
+  --bg-soft: #080b18;
+  --card: #0a0e1e;
+  --border: #1c2440;
 
-  --green-deep: #12a350;
-  --green-bright: #2ee673;
+  --blue-deep: #1450c9;
+  --blue-bright: #3b8eff;
 
   --text: #ffffff;
-  --text-muted: #a3a3a3;
+  --text-muted: #9aa3c0;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -65,7 +65,7 @@ body {
   height: 520px;
   top: -10%;
   left: -8%;
-  background: var(--green-deep);
+  background: var(--blue-deep);
   animation: drift-1 26s ease-in-out infinite;
 }
 
@@ -74,7 +74,7 @@ body {
   height: 420px;
   top: 40%;
   right: -10%;
-  background: var(--green-bright);
+  background: var(--blue-bright);
   animation: drift-2 32s ease-in-out infinite;
 }
 
@@ -83,7 +83,7 @@ body {
   height: 380px;
   bottom: -8%;
   left: 30%;
-  background: var(--green-deep);
+  background: var(--blue-deep);
   animation: drift-3 22s ease-in-out infinite;
 }
 
@@ -91,8 +91,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(46, 230, 115, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(46, 230, 115, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(59, 142, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 142, 255, 0.035) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 90%);
 }
@@ -128,7 +128,7 @@ body {
 .scroll-progress-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--green-deep), var(--green-bright));
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-bright));
   transition: width 0.1s linear;
 }
 
@@ -176,7 +176,7 @@ section {
 /* Foco visível no teclado, pra acessibilidade */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--green-bright);
+  outline: 2px solid var(--blue-bright);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -210,7 +210,7 @@ button:focus-visible {
 }
 
 .nav-logo .dot {
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 .nav-links {
@@ -235,7 +235,7 @@ button:focus-visible {
   bottom: 0;
   width: 0%;
   height: 1px;
-  background: var(--green-bright);
+  background: var(--blue-bright);
   transition: width 0.25s ease;
 }
 
@@ -244,7 +244,7 @@ button:focus-visible {
 }
 
 .nav-links a:hover {
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 .nav-cta-group {
@@ -257,15 +257,15 @@ button:focus-visible {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 500;
-  background: var(--green-deep);
-  color: #eafff0;
+  background: var(--blue-deep);
+  color: #eaf2ff;
   padding: 8px 16px;
   border-radius: 6px;
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .nav-cv-btn:hover {
-  background: var(--green-bright);
+  background: var(--blue-bright);
   color: #0a0f0d;
   transform: translateY(-1px);
 }
@@ -280,8 +280,8 @@ button:focus-visible {
 }
 
 .nav-github:hover {
-  border-color: var(--green-bright);
-  color: var(--green-bright);
+  border-color: var(--blue-bright);
+  color: var(--blue-bright);
 }
 
 
@@ -327,7 +327,7 @@ button:focus-visible {
   z-index: 1;
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  color: var(--green-bright);
+  color: var(--blue-bright);
   margin-bottom: 24px;
 }
 
@@ -371,12 +371,12 @@ button:focus-visible {
 }
 
 .btn-primary {
-  background: var(--green-deep);
-  color: #eafff0;
+  background: var(--blue-deep);
+  color: #eaf2ff;
 }
 
 .btn-primary:hover {
-  background: var(--green-bright);
+  background: var(--blue-bright);
   color: #0a0f0d;
   transform: translateY(-2px);
 }
@@ -387,8 +387,8 @@ button:focus-visible {
 }
 
 .btn-ghost:hover {
-  border-color: var(--green-bright);
-  color: var(--green-bright);
+  border-color: var(--blue-bright);
+  color: var(--blue-bright);
   transform: translateY(-2px);
 }
 
@@ -423,7 +423,7 @@ button:focus-visible {
   width: 48px;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--green-deep), var(--green-bright));
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-bright));
 }
 
 .annotation {
@@ -432,7 +432,7 @@ button:focus-visible {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 /* ============================================
@@ -475,8 +475,8 @@ button:focus-visible {
 }
 
 .carousel-btn:hover {
-  border-color: var(--green-bright);
-  color: var(--green-bright);
+  border-color: var(--blue-bright);
+  color: var(--blue-bright);
   transform: scale(1.08);
 }
 
@@ -498,7 +498,7 @@ button:focus-visible {
 }
 
 .project-card:hover {
-  border-color: var(--green-deep);
+  border-color: var(--blue-deep);
 }
 
 .project-card-image {
@@ -517,9 +517,9 @@ button:focus-visible {
   z-index: 2;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--green-bright);
+  color: var(--blue-bright);
   background: rgba(10, 15, 13, 0.75);
-  border: 1px solid var(--green-deep);
+  border: 1px solid var(--blue-deep);
   padding: 3px 9px;
   border-radius: 20px;
   backdrop-filter: blur(4px);
@@ -565,7 +565,7 @@ button:focus-visible {
 .project-link {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--green-bright);
+  color: var(--blue-bright);
   font-weight: 500;
 }
 
@@ -593,7 +593,7 @@ button:focus-visible {
 }
 
 .hero-title .highlight {
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 .social-icons {
@@ -619,8 +619,8 @@ button:focus-visible {
 }
 
 .social-icon:hover {
-  color: var(--green-bright);
-  border-color: var(--green-deep);
+  color: var(--blue-bright);
+  border-color: var(--blue-deep);
   transform: translateY(-2px);
 }
 
@@ -639,7 +639,7 @@ button:focus-visible {
   position: absolute;
   inset: -10%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(74, 222, 128, 0.35) 0%, rgba(46, 125, 50, 0.12) 55%, transparent 75%);
+  background: radial-gradient(circle, rgba(59, 142, 255, 0.35) 0%, rgba(20, 80, 201, 0.12) 55%, transparent 75%);
   filter: blur(6px);
   animation: glow-pulse 4s ease-in-out infinite;
 }
@@ -656,7 +656,7 @@ button:focus-visible {
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--bg);
-  box-shadow: 0 0 0 2px var(--green-deep);
+  box-shadow: 0 0 0 2px var(--blue-deep);
 }
 
 .hero-code-card {
@@ -706,7 +706,7 @@ button:focus-visible {
 }
 
 .hero-code-text .code-kw {
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 .hero-code-text .code-str {
@@ -763,7 +763,7 @@ button:focus-visible {
   font-family: var(--font-mono);
   font-size: 2.6rem;
   font-weight: 700;
-  color: var(--green-bright);
+  color: var(--blue-bright);
   line-height: 1;
 }
 
@@ -777,17 +777,17 @@ button:focus-visible {
 .tech-card-back {
   transform: rotateY(180deg);
   justify-content: center;
-  border-color: var(--green-deep);
-  background: linear-gradient(160deg, rgba(46, 230, 115, 0.07), var(--card) 60%);
+  border-color: var(--blue-deep);
+  background: linear-gradient(160deg, rgba(59, 142, 255, 0.07), var(--card) 60%);
 }
 
 .tech-card:hover .tech-card-face.tech-card-front {
-  border-color: var(--green-bright);
+  border-color: var(--blue-bright);
 }
 
 .tech-card-highlight .tech-card-front,
 .tech-card-highlight .tech-card-back {
-  border-color: var(--green-deep);
+  border-color: var(--blue-deep);
 }
 
 .tech-category-title {
@@ -811,7 +811,7 @@ button:focus-visible {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #0a0f0d;
-  background: var(--green-bright);
+  background: var(--blue-bright);
   padding: 3px 9px;
   border-radius: 20px;
 }
@@ -838,8 +838,8 @@ button:focus-visible {
 }
 
 .tech-pill-accent {
-  border-color: var(--green-deep);
-  color: var(--green-bright);
+  border-color: var(--blue-deep);
+  color: var(--blue-bright);
 }
 
 /* ============================================
@@ -860,14 +860,14 @@ button:focus-visible {
 }
 
 .formacao-item:hover {
-  border-color: var(--green-bright);
-  background: rgba(46, 230, 115, 0.05);
+  border-color: var(--blue-bright);
+  background: rgba(59, 142, 255, 0.05);
   transform: translateX(4px);
 }
 
 .formacao-item:hover h3,
 .formacao-item:hover .formacao-period {
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 .formacao-item-top {
@@ -887,7 +887,7 @@ button:focus-visible {
 .formacao-period {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--green-bright);
+  color: var(--blue-bright);
   white-space: nowrap;
 }
 
@@ -898,7 +898,7 @@ button:focus-visible {
 
 .formacao-note {
   font-size: 0.85rem;
-  color: var(--green-bright);
+  color: var(--blue-bright);
   font-style: italic;
   margin-top: 4px;
 }
@@ -968,15 +968,15 @@ button:focus-visible {
 }
 
 .contact-link:hover {
-  border-color: var(--green-bright);
-  background: rgba(46, 230, 115, 0.05);
+  border-color: var(--blue-bright);
+  background: rgba(59, 142, 255, 0.05);
   transform: translateX(4px);
 }
 
 .contact-link:hover .contact-icon,
 .contact-link:hover .contact-arrow,
 .contact-link:hover .contact-label {
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 .contact-link:hover .contact-arrow {
@@ -994,7 +994,7 @@ button:focus-visible {
 .contact-value {
   font-family: var(--font-mono);
   font-size: 0.95rem;
-  color: var(--green-bright);
+  color: var(--blue-bright);
 }
 
 /* ============================================
