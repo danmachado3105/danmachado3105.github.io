@@ -2,7 +2,7 @@
    TOKENS — variáveis de design
    ============================================ */
 :root {
-  --bg: #05070f;
+  --bg: #000000;
   --bg-soft: #080b18;
   --card: #0a0e1e;
   --border: #1c2440;
@@ -1080,4 +1080,90 @@ button:focus-visible {
     align-items: flex-start;
     gap: 6px;
   }
+}
+
+/* dock lateral */
+.side-dock {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 10px;
+  background: rgba(10, 14, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.dock-item {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.dock-item svg { width: 18px; height: 18px; }
+.dock-item:hover { color: #fff; }
+.dock-item.active {
+  color: #fff;
+  background: var(--blue-bright);
+  box-shadow: 0 0 16px 2px rgba(59, 142, 255, 0.55);
+}
+@media (max-width: 900px) {
+  .side-dock {
+    left: 50%;
+    top: auto;
+    bottom: 16px;
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+}
+
+/* fundo ambiente agora só existe dentro do hero */
+.bg-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* timeline da formação */
+.timeline { position: relative; max-width: 640px; margin: 0 auto; padding-left: 32px; }
+.timeline-line { position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
+.timeline-fill {
+  position: absolute; top: 0; left: 0; width: 100%; height: 0%;
+  background: linear-gradient(var(--blue-bright), var(--blue-deep));
+  transition: height 1.4s ease;
+}
+.timeline.is-drawn .timeline-fill { height: 100%; }
+.timeline-node { position: relative; margin-bottom: 36px; }
+.timeline-node:last-child { margin-bottom: 0; }
+.timeline-dot { position: absolute; left: -32px; top: 4px; width: 12px; height: 12px; border-radius: 50%; }
+.dot-done { background: var(--blue-bright); }
+.dot-current {
+  background: var(--blue-bright);
+  box-shadow: 0 0 0 4px rgba(59, 142, 255, 0.2);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+.dot-ghost { background: transparent; border: 2px dashed var(--text-muted); }
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(59, 142, 255, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(59, 142, 255, 0.08); }
+}
+.timeline-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.timeline-top h3 { font-family: var(--font-display); font-size: 1.1rem; }
+.timeline-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--blue-bright); white-space: nowrap; }
+.timeline-sub { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+.timeline-ghost .timeline-top h3, .timeline-ghost .timeline-date { color: var(--text-muted); }
+
+/* sem cantos arredondados, exceto na seção de projetos */
+.tech-card-face, .contact-link, .btn, .social-icon, .tech-pill, .diff-tag {
+  border-radius: 0;
 }

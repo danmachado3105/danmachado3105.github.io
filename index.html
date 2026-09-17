@@ -22,31 +22,39 @@
 </head>
 <body>
 
-  <!-- Fundo ambiente: brilhos verdes sutis e fixos, atrás de todo o conteúdo -->
-  <div class="bg-ambient" aria-hidden="true">
-    <div class="bg-blob bg-blob-1"></div>
-    <div class="bg-blob bg-blob-2"></div>
-    <div class="bg-blob bg-blob-3"></div>
-    <div class="bg-grid"></div>
-  </div>
+  <nav class="side-dock" aria-label="Navegação principal">
+    <a href="#top" class="dock-item" data-target="top" aria-label="Início">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+    </a>
+    <a href="#tecnologias" class="dock-item" data-target="tecnologias" aria-label="Tecnologias">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6 2 12l6 6"/><path d="M16 6l6 6-6 6"/></svg>
+    </a>
+    <a href="#formacao" class="dock-item" data-target="formacao" aria-label="Formação">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+    </a>
+    <a href="#projetos" class="dock-item" data-target="projetos" aria-label="Projetos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
+    </a>
+    <a href="#contato" class="dock-item" data-target="contato" aria-label="Contato">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+    </a>
+  </nav>
 
   <!-- Barra de progresso de leitura -->
   <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgress"></div></div>
-
-  <!-- ===== HEADER / NAV ===== -->
-  <header class="site-header">
-    <nav class="nav-container">
-      <a href="#top" class="nav-logo">DM<span class="dot">.</span></a>
-      <div class="nav-cta-group">
-        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="nav-github">GitHub ↗</a>
-      </div>
-    </nav>
-  </header>
 
   <main>
 
     <!-- ===== HERO / SOBRE MIM ===== -->
     <section id="top" class="hero">
+
+      <div class="bg-ambient" aria-hidden="true">
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
+        <div class="bg-grid"></div>
+      </div>
+
       <div id="sobre" class="hero-grid">
         <div class="hero-content">
           <p class="eyebrow">// Desenvolvedor de Software</p>
@@ -93,7 +101,7 @@
           <div class="hero-photo-blob"></div>
           <!-- grafo de nós decorativo, mesmo motivo visual usado no banner do LinkedIn -->
           <svg class="hero-graph" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g class="graph-lines" stroke="#3b8eff" stroke-width="1" opacity="0.45">
+            <g class="graph-lines" stroke" stroke-width="1" opacity="0.45">
               <line x1="30" y1="40" x2="80" y2="70" />
               <line x1="80" y1="70" x2="60" y2="130" />
               <line x1="250" y1="30" x2="270" y2="90" />
@@ -210,22 +218,40 @@
         <span class="annotation">minha trajetória</span>
       </div>
 
-      <div class="formacao-list">
-        <div class="formacao-item reveal">
-          <div class="formacao-item-top">
-            <h3>Bacharelado em Engenharia de Software</h3>
-            <span class="formacao-period">Ago/2026 – Presente</span>
+      <div class="timeline" id="timeline">
+        <div class="timeline-line"><div class="timeline-fill" id="timelineFill"></div></div>
+
+        <div class="timeline-node reveal">
+          <span class="timeline-dot dot-done"></span>
+          <div class="timeline-content">
+            <div class="timeline-top">
+              <h3>Técnico em Desenvolvimento de Sistemas</h3>
+              <span class="timeline-date">2024 — 2026</span>
+            </div>
+            <p class="timeline-sub">UniCesumar</p>
           </div>
-          <p class="formacao-school">Universidade Veiga de Almeida (UVA) · Barra da Tijuca, RJ</p>
-          <p class="formacao-note">Bolsista ProUni</p>
         </div>
 
-        <div class="formacao-item reveal">
-          <div class="formacao-item-top">
-            <h3>Técnico em Desenvolvimento de Sistemas</h3>
-            <span class="formacao-period">2024 – 2026</span>
+        <div class="timeline-node reveal">
+          <span class="timeline-dot dot-current"></span>
+          <div class="timeline-content">
+            <div class="timeline-top">
+              <h3>Bacharelado em Engenharia de Software</h3>
+              <span class="timeline-date">ago/2026 — presente</span>
+            </div>
+            <p class="timeline-sub">Universidade Veiga de Almeida (UVA) · Bolsista ProUni</p>
           </div>
-          <p class="formacao-school">UniCesumar</p>
+        </div>
+
+        <div class="timeline-node timeline-ghost reveal">
+          <span class="timeline-dot dot-ghost"></span>
+          <div class="timeline-content">
+            <div class="timeline-top">
+              <h3>Previsão de conclusão</h3>
+              <span class="timeline-date">2030</span>
+            </div>
+            <p class="timeline-sub">Bacharelado em Engenharia de Software</p>
+          </div>
         </div>
       </div>
     </section>

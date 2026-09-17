@@ -2,26 +2,22 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Destaca o link do menu correspondente à seção visível na tela
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
 
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach((link) => {
-          link.style.color = link.getAttribute('href') === `#${id}`
-            ? 'var(--green-bright)'
-            : '';
-        });
-      }
-    });
-  },
-  { rootMargin: '-40% 0px -50% 0px' }
-);
+const dockItems = document.querySelectorAll('.dock-item');
+const dockSections = document.querySelectorAll('#top, #tecnologias, #formacao, #projetos, #contato');
 
-sections.forEach((section) => navObserver.observe(section));
+const dockObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      dockItems.forEach((item) => {
+        item.classList.toggle('active', item.dataset.target === id);
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+dockSections.forEach((s) => dockObserver.observe(s));
 
 // Respeita quem prefere menos movimento
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -168,4 +164,17 @@ if (projectsViewport && projectsTrack && carouselPrev && carouselNext) {
   // Pausa o avanço automático enquanto o mouse estiver sobre os cards
   projectsViewport.addEventListener('mouseenter', () => { paused = true; });
   projectsViewport.addEventListener('mouseleave', () => { paused = false; });
+}
+
+const timelineEl = document.getElementById('timeline');
+if (timelineEl) {
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        timelineEl.classList.add('is-drawn');
+        timelineObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  timelineObserver.observe(timelineEl);
 }
