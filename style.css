@@ -18,7 +18,6 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   --max-width: 1440px;
-  --dock-clearance: 96px;
 }
 
 /* ============================================
@@ -169,8 +168,7 @@ img, svg {
 }
 
 section {
-  /* Reserva a faixa do dock fixo, sem alterar os componentes internos. */
-  padding: 100px calc(48px + var(--dock-clearance)) 100px 48px;
+  padding: 100px 48px;
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -293,12 +291,14 @@ button:focus-visible {
    ============================================ */
 .hero {
   position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   height: 100vh;
   min-height: 100vh;
   display: grid;
   align-items: center;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding: 48px 0;
   overflow: hidden;
 }
 
@@ -589,18 +589,23 @@ button:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 370px);
+  column-gap: 80px;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 50px;
 }
 
 .hero-content {
-  max-width: 720px;
+  max-width: 800px;
 }
 
 .hero-title .highlight {
   color: var(--blue-bright);
+  white-space: nowrap;
 }
 
 .social-icons {
@@ -636,7 +641,8 @@ button:focus-visible {
   width: 100%;
   max-width: 370px;
   aspect-ratio: 1 / 1;
-  margin: 0 auto;
+  margin: 0;
+  justify-self: end;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -762,8 +768,11 @@ button:focus-visible {
 }
 
 .tech-card-front {
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
 .tech-glyph {
@@ -810,6 +819,7 @@ button:focus-visible {
 .tech-card-front .tech-category-title {
   margin-bottom: 0;
   font-size: 1.05rem;
+  justify-content: center;
 }
 
 .diff-tag {
@@ -1049,12 +1059,14 @@ button:focus-visible {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: left;
+    padding: 0 20px;
   }
 
   .hero-photo-wrap {
     order: -1;
     max-width: 220px;
     margin: 0 auto 56px auto;
+    transform: none;
   }
 
   .hero-code-card {
@@ -1124,10 +1136,6 @@ button:focus-visible {
   box-shadow: 0 0 16px 2px rgba(59, 142, 255, 0.55);
 }
 @media (max-width: 900px) {
-  :root {
-    --dock-clearance: 0px;
-  }
-
   .side-dock {
     left: 50%;
     right: auto;
@@ -1148,7 +1156,7 @@ button:focus-visible {
 }
 
 /* timeline da formação */
-.timeline { position: relative; max-width: 640px; margin: 0 auto; padding-left: 32px; }
+.timeline { position: relative; max-width: 960px; margin: 0 auto; padding-left: 32px; }
 .timeline-line { position: absolute; left: 5px; top: 6px; bottom: 6px; width: 2px; background: var(--border); }
 .timeline-fill {
   position: absolute; top: 0; left: 0; width: 100%; height: 0%;
@@ -1179,4 +1187,86 @@ button:focus-visible {
 /* sem cantos arredondados, exceto na seção de projetos */
 .tech-card-face, .contact-link, .btn, .social-icon, .tech-pill, .diff-tag {
   border-radius: 0;
+}
+
+/* Exceção visual do hero: controles com cantos suavemente arredondados. */
+.hero .btn,
+.hero .social-icon {
+  border-radius: 10px;
+}
+
+/* Hero em tablet e mobile: composição em uma coluna, sem alterar o desktop. */
+@media (max-width: 1023px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 100vh;
+    padding: 72px 20px;
+    text-align: center;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: contents;
+    text-align: center;
+  }
+
+  .eyebrow {
+    order: 1;
+  }
+
+  .hero-photo-wrap {
+    order: 2;
+  }
+
+  .hero-title {
+    order: 3;
+  }
+
+  .hero-sub {
+    order: 4;
+  }
+
+  .hero-actions {
+    order: 5;
+  }
+
+  .hero-sub,
+  .social-icons {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    text-align: center;
+  }
+
+  .hero-actions .btn {
+    margin-bottom: 16px;
+  }
+
+  .hero-photo-wrap {
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .hero-code-card {
+    display: none;
+  }
 }
