@@ -1,6 +1,29 @@
 // Atualiza o ano no rodapé automaticamente
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Alternância de tema com preferência persistida no navegador
+const themeToggle = document.getElementById('theme-toggle');
+
+function updateThemeToggle() {
+  const isLightMode = document.body.classList.contains('light-mode');
+  themeToggle.setAttribute('aria-label', isLightMode ? 'Ativar modo escuro' : 'Ativar modo claro');
+  themeToggle.setAttribute('aria-pressed', String(isLightMode));
+}
+
+if (themeToggle) {
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+  }
+
+  updateThemeToggle();
+
+  themeToggle.addEventListener('click', () => {
+    const isLightMode = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    updateThemeToggle();
+  });
+}
+
 // Destaca o link do menu correspondente à seção visível na tela
 
 const dockItems = document.querySelectorAll('.dock-item');

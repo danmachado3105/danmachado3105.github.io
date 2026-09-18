@@ -40,6 +40,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ============================================
@@ -172,6 +173,7 @@ section {
   padding: 100px 48px;
   max-width: none;
   margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Variações sutis de tom para criar profundidade entre os blocos da página. */
@@ -1200,6 +1202,55 @@ button:focus-visible {
   background: var(--blue-bright);
   box-shadow: 0 0 16px 2px rgba(59, 142, 255, 0.55);
 }
+.dock-btn {
+  width: 42px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.dock-btn:hover {
+  color: var(--text);
+  background: rgba(59, 142, 255, 0.12);
+}
+.theme-switch {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 18px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.theme-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.light-mode .theme-switch {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+}
+.light-mode .theme-switch-thumb {
+  transform: translateX(14px);
+}
+.light-mode .dock-btn {
+  color: #475569;
+}
+.light-mode .dock-btn:hover {
+  color: #0f172a;
+}
 @media (max-width: 900px) {
   .side-dock {
     left: 50%;
@@ -1382,4 +1433,110 @@ button:focus-visible {
     margin-top: 16px;
     text-align: center;
   }
+}
+
+/* ============================================
+   MODO CLARO
+   ============================================ */
+.light-mode {
+  --bg: #f8fafc;
+  --bg-soft: #f1f5f9;
+  --card: #ffffff;
+  --border: #cbd5e1;
+  --text: #0f172a;
+  --text-muted: #475569;
+}
+
+.light-mode main > section:nth-of-type(1) {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
+    #f8fafc;
+}
+
+.light-mode main > section:nth-of-type(2) {
+  background-color: #f1f5f9;
+}
+
+.light-mode main > section:nth-of-type(3) {
+  background-color: #e2e8f0;
+}
+
+.light-mode main > section:nth-of-type(4) {
+  background-color: #cbd5e1;
+}
+
+.light-mode main > section:nth-of-type(5) {
+  background-color: #f8fafc;
+}
+
+.light-mode .site-header {
+  background: rgba(255, 255, 255, 0.84);
+  border-bottom-color: #e2e8f0;
+}
+
+.light-mode .nav-links a,
+.light-mode .nav-github {
+  color: #475569;
+}
+
+.light-mode .stack-group,
+.light-mode .stack-item,
+.light-mode .formacao-item,
+.light-mode .contact-link,
+.light-mode .project-card,
+.light-mode .hero-code-card {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .stack-item,
+.light-mode .project-card-image {
+  background: #ffffff;
+}
+
+.light-mode .hero-code-card {
+  background: #0d1117;
+  border-color: #2a2d38;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
+}
+
+.light-mode .hero-code-text {
+  color: #9498a6;
+}
+
+.light-mode .hero-code-text .code-kw {
+  color: #3b8eff;
+}
+
+.light-mode .hero-code-text .code-str {
+  color: #c9b896;
+}
+
+.light-mode .timeline-line {
+  background: #94a3b8;
+}
+
+.light-mode .hero::after {
+  background: linear-gradient(to bottom, transparent, #f8fafc);
+}
+
+.light-mode .hero-photo {
+  border: 2px solid #2563eb;
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+}
+
+.light-mode .bg-ambient {
+  opacity: 0.16;
+}
+
+.light-mode .side-dock {
+  background: rgba(255, 255, 255, 0.84);
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+.light-mode .dock-item:hover {
+  color: #0f172a;
 }
