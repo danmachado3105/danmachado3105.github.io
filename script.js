@@ -27,7 +27,7 @@ if (themeToggle) {
 // Destaca o link do menu correspondente à seção visível na tela
 
 const dockItems = document.querySelectorAll('.dock-item');
-const dockSections = document.querySelectorAll('#top, #tecnologias, #formacao, #projetos, #contato');
+const dockSections = document.querySelectorAll('#top, #sobre, #tecnologias, #formacao, #projetos, #contato');
 
 const dockObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
