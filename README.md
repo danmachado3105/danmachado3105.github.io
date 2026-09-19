@@ -6,12 +6,12 @@ Site pessoal desenvolvido para reunir meus projetos, tecnologias, formação e c
 
 ## Sobre o projeto
 
-Construído com HTML, CSS e JavaScript puro — sem frameworks — como exercício prático enquanto aprendo front-end. O objetivo foi ter controle total sobre cada linha de código, entender de verdade o que estava sendo escrito e usar o próprio site como campo de treino para efeitos e interações mais avançadas (animações, carrossel, cards 3D).
+Construído com HTML, CSS e JavaScript puro — sem frameworks ou dependências de build — como um portfólio profissional e um laboratório prático de front-end. O projeto reúne apresentação pessoal, stack, formação, projetos e canais de contato em uma experiência responsiva.
 
 ## Tecnologias
 
 - HTML5
-- CSS3 (Grid, Flexbox, variáveis CSS, transformações 3D)
+- CSS3 (Grid, Flexbox, variáveis CSS, animações e transformações 3D)
 - JavaScript (vanilla)
 - Hospedagem via GitHub Pages
 
@@ -21,7 +21,7 @@ Construído com HTML, CSS e JavaScript puro — sem frameworks — como exercíc
 ├── index.html                        # Estrutura da página
 ├── style.css                         # Entrada única dos estilos
 ├── css/
-│   ├── legacy.css                    # Estilos existentes preservados durante a migração
+│   ├── legacy.css                    # Estilos dos componentes e seções existentes
 │   ├── variables.css                 # Tokens de cor, tipografia, medidas e movimento
 │   ├── reset.css                     # Normalização mínima entre navegadores
 │   ├── base.css                      # Base tipográfica, seleção e foco
@@ -32,23 +32,23 @@ Construído com HTML, CSS e JavaScript puro — sem frameworks — como exercíc
 │   └── main.js                       # Interações (carrossel, cards 3D, scroll reveal, etc.)
 └── assets/
     ├── perfil.jpg                    # Foto de perfil
+    ├── danilomachado.png             # Foto da seção Sobre Mim
     ├── curriculo_danilo_machado.pdf  # Currículo em PDF (botão de download)
+    ├── fp-sellection.png             # Preview do projeto FP Sellection
     ├── Redify.png                    # Preview do projeto Redify
     ├── velun-ai.png                  # Preview do projeto Velun AI
     ├── Velun-tech.png                # Preview do projeto Velun Tech
     ├── Velun-zap.png                 # Preview do projeto Velun ZAP
     ├── Taskflow.png                  # Preview do projeto Taskflow
-    ├── favicon.ico
-    ├── favicon-16x16.png
-    ├── favicon-32x32.png
-    ├── favicon-48x48.png
-    └── apple-touch-icon.png
+    └── workzen.png                   # Preview do projeto Workzen
 ```
+
+O favicon principal é um SVG inline no `<head>` do `index.html`. O arquivo `style.css` funciona como ponto de entrada e importa os módulos na ordem necessária para manter a compatibilidade com o visual existente.
 
 ## Seções do site
 
 - **Início / Sobre mim** — apresentação, foto com efeito de destaque, botão de download do currículo e links para GitHub, LinkedIn e e-mail
-- **Tecnologias** — cards com efeito de flip 3D (viram ao passar o mouse ou tocar): Front-end, Ferramentas e Inteligência Artificial, essa última marcada como diferencial
+- **Tecnologias** — cards organizados por desenvolvimento, ferramentas e integrações
 - **Formação** — Bacharelado em Engenharia de Software (UVA) e Técnico em Desenvolvimento de Sistemas (UniCesumar), com cards interativos
 - **Projetos** — carrossel horizontal com rolagem automática e infinita, apresentando 5 projetos:
   - [Redify](https://github.com/danmachado3105) — SaaS de correção de redações do ENEM com IA
@@ -60,20 +60,29 @@ Construído com HTML, CSS e JavaScript puro — sem frameworks — como exercíc
 
 ## Detalhes de interação
 
-- Fundo com brilhos verdes sutis e em movimento constante
+- Fundo com brilhos azuis sutis e grade técnica no modo claro
 - Animações de entrada (fade + subida) conforme o usuário rola a página
 - Barra de progresso de leitura fixa no topo
 - Carrossel de projetos com loop infinito, velocidade automática lenta e setas para navegação manual mais rápida
-- Cards de tecnologia com flip 3D no hover (ou toque, no celular)
 - Efeito de leve inclinação 3D nos cards de projeto ao passar o mouse
+- Alternância entre tema escuro e claro com preferência persistida no navegador
+- Dock de navegação que destaca a seção visível
 - Todas as animações respeitam a preferência do sistema por movimento reduzido (`prefers-reduced-motion`)
+
+## SEO e acessibilidade
+
+- Título, descrição, canonical, Open Graph e Twitter Cards configurados no `<head>`
+- Dados estruturados `Person` em JSON-LD para mecanismos de busca
+- Foco visível para navegação por teclado
+- Textos alternativos nas imagens e rótulos acessíveis nos controles
+- Layout responsivo para desktop, tablet e mobile
 
 ## Rodando localmente
 
 Não há dependências ou build — basta abrir o `index.html` no navegador, ou servir a pasta com qualquer servidor estático:
 
 ```bash
-python3 -m http.server 8080
+python -m http.server 8080
 ```
 
 Depois acesse `http://localhost:8080`.
