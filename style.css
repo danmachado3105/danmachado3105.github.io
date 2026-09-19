@@ -831,16 +831,34 @@ body:not(.light-mode) .hero .bg-ambient {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   line-height: 1.1;
+  padding-bottom: 18px;
+  position: relative;
 }
 
 .about-content h2::after {
   content: '';
-  display: block;
-  width: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
   height: 3px;
-  margin-top: 8px;
   border-radius: 2px;
-  background: var(--blue-bright);
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-bright));
+}
+
+@media (min-width: 1024px) {
+  .about-content h2 {
+    padding-bottom: 0;
+  }
+
+  .about-content h2::after {
+    position: static;
+    display: block;
+    width: 64px;
+    margin-top: 8px;
+    transform: none;
+  }
 }
 
 .about-content p:not(.about-eyebrow) {
