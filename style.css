@@ -180,19 +180,19 @@ section {
 
 
 main > section:nth-of-type(2) {
-  background-color: #080c14;
+  background: linear-gradient(180deg, #080c14 0%, #0b1020 100%);
 }
 
 main > section:nth-of-type(3) {
-  background-color: #05080f;
+  background: linear-gradient(180deg, #05080f 0%, #080d17 100%);
 }
 
 main > section:nth-of-type(4) {
-  background-color: #060a12;
+  background: linear-gradient(180deg, #060a12 0%, #0a101b 100%);
 }
 
 main > section:nth-of-type(5) {
-  background-color: #03050a;
+  background: linear-gradient(180deg, #03050a 0%, #070b12 100%);
 }
 
 /* Foco visível no teclado, pra acessibilidade */
@@ -1027,44 +1027,61 @@ button:focus-visible {
    ============================================ */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 28px 48px 22px;
-}
-
-.footer-inner,
-.footer-copyright {
-  max-width: 960px;
-  margin: 0 auto;
+  padding: 24px 40px;
 }
 
 .footer-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 
-.footer-brand span {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
 }
 
-.footer-brand p,
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--text);
+}
+
+.footer-logo span {
+  color: var(--blue-bright);
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.footer-author {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 .footer-copyright {
   color: var(--text-muted);
-  font-size: 0.82rem;
-}
-
-.footer-brand p {
-  margin-top: 2px;
+  font-size: 0.78rem;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 18px;
+  flex-shrink: 0;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -1078,16 +1095,36 @@ button:focus-visible {
   color: var(--blue-bright);
 }
 
+.light-mode .site-footer {
+  background: #334155;
+  border-top-color: #1e293b;
+  color: #f8fafc;
+}
+
+.light-mode .site-footer .footer-logo,
+.light-mode .site-footer .footer-author {
+  color: #f8fafc;
+}
+
+.light-mode .site-footer .footer-copyright,
+.light-mode .site-footer .footer-links {
+  color: #94a3b8;
+}
+
+.light-mode .site-footer .footer-logo span,
+.light-mode .site-footer .footer-links a:hover {
+  color: #3b82f6;
+}
+
 .footer-links a + a::before {
   content: '·';
-  margin-right: 10px;
+  margin-right: 18px;
   color: var(--border);
 }
 
-.footer-copyright {
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+/* O rodapé escuro mantém contraste suficiente no modo claro. */
+.light-mode .footer-links a + a::before {
+  color: #475569;
 }
 
 /* ============================================
@@ -1429,8 +1466,17 @@ button:focus-visible {
     text-align: center;
   }
 
+  .footer-brand {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .footer-copyright {
-    margin-top: 16px;
     text-align: center;
   }
 }
@@ -1451,23 +1497,23 @@ button:focus-visible {
   background:
     radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
     radial-gradient(circle at 10% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
-    #f8fafc;
+    linear-gradient(180deg, #d7dee8 0%, #edf1f5 58%, #f1f5f9 100%);
 }
 
 .light-mode main > section:nth-of-type(2) {
-  background-color: #f1f5f9;
+  background: linear-gradient(180deg, #f1f5f9 0%, #e8eef4 48%, #dbe4ed 100%);
 }
 
 .light-mode main > section:nth-of-type(3) {
-  background-color: #e2e8f0;
+  background: linear-gradient(180deg, #e2e8f0 0%, #d5dfe9 52%, #cbd5e1 100%);
 }
 
 .light-mode main > section:nth-of-type(4) {
-  background-color: #cbd5e1;
+  background: linear-gradient(180deg, #b9c5d2 0%, #c8d2de 50%, #dce4ec 100%);
 }
 
 .light-mode main > section:nth-of-type(5) {
-  background-color: #f8fafc;
+  background: linear-gradient(180deg, #e5eaf0 0%, #edf1f5 48%, #f8fafc 100%);
 }
 
 .light-mode .site-header {
