@@ -1,0 +1,19 @@
+/* Pequenos refinamentos compartilhados entre os componentes existentes. */
+.nav-cv-btn,
+.btn,
+.project-link,
+.contact-link {
+  transition-duration: var(--motion-fast);
+}
+
+.project-card,
+.stack-item,
+.formacao-item,
+.contact-link {
+  will-change: transform;
+}
+
+.project-link:focus-visible,
+.nav-links a:focus-visible {
+  border-radius: 2px;
+}

@@ -1,0 +1,16 @@
+:root {
+  --color-background: #000000;
+  --color-surface: #0a0e1e;
+  --color-border: #2a2d38;
+  --color-accent: #3b8eff;
+  --color-accent-strong: #1450c9;
+  --color-text: #ffffff;
+  --color-text-muted: #9498a6;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --content-width: 1440px;
+  --content-padding: clamp(20px, 4vw, 48px);
+  --motion-fast: 180ms;
+  --motion-base: 300ms;
+}

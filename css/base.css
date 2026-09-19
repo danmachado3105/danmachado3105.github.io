@@ -1,0 +1,18 @@
+body {
+  min-width: 320px;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--blue-deep);
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--blue-bright);
+  outline-offset: 4px;
+}
+
+[aria-hidden='true'] {
+  user-select: none;
+}

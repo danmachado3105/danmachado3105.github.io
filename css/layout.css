@@ -1,0 +1,13 @@
+main {
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: 24px;
+}
+
+.about-container,
+.stack-groups,
+.contact-links {
+  width: min(100%, var(--content-width));
+}

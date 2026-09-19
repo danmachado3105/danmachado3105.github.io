@@ -19,8 +19,17 @@ Construído com HTML, CSS e JavaScript puro — sem frameworks — como exercíc
 
 ```
 ├── index.html                        # Estrutura da página
-├── style.css                         # Estilos, responsividade e animações
-├── script.js                         # Interações (carrossel, cards 3D, scroll reveal, etc.)
+├── style.css                         # Entrada única dos estilos
+├── css/
+│   ├── legacy.css                    # Estilos existentes preservados durante a migração
+│   ├── variables.css                 # Tokens de cor, tipografia, medidas e movimento
+│   ├── reset.css                     # Normalização mínima entre navegadores
+│   ├── base.css                      # Base tipográfica, seleção e foco
+│   ├── layout.css                    # Regras de composição e containers
+│   ├── components.css                # Refinamentos compartilhados de componentes
+│   └── responsive.css                # Ajustes responsivos adicionais
+├── js/
+│   └── main.js                       # Interações (carrossel, cards 3D, scroll reveal, etc.)
 └── assets/
     ├── perfil.jpg                    # Foto de perfil
     ├── curriculo_danilo_machado.pdf  # Currículo em PDF (botão de download)
