@@ -1571,7 +1571,10 @@ body.light-mode .hero-glow {
   transition: height 1.4s ease;
 }
 .timeline.is-drawn .timeline-fill { height: 100%; }
-.timeline-node { position: relative; margin-bottom: 36px; }
+.timeline-node {
+  position: relative;
+  margin-bottom: 36px;
+}
 .timeline-node:last-child { margin-bottom: 0; }
 .timeline-dot { position: absolute; left: -32px; top: 4px; width: 12px; height: 12px; border-radius: 50%; }
 .dot-done { background: var(--blue-bright); }
@@ -1586,9 +1589,30 @@ body.light-mode .hero-glow {
   50% { box-shadow: 0 0 0 8px rgba(59, 142, 255, 0.08); }
 }
 .timeline-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.timeline-top h3 { font-family: var(--font-display); font-size: 1.1rem; }
-.timeline-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--blue-bright); white-space: nowrap; }
-.timeline-sub { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+.timeline-top h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  transition: color var(--motion-base) var(--theme-ease), transform var(--motion-base) var(--theme-ease);
+}
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--blue-bright);
+  white-space: nowrap;
+  transition: color var(--motion-base) var(--theme-ease), transform var(--motion-base) var(--theme-ease);
+}
+.timeline-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+  transition: color var(--motion-base) var(--theme-ease), transform var(--motion-base) var(--theme-ease);
+}
+.timeline-node:hover .timeline-top h3,
+.timeline-node:hover .timeline-date,
+.timeline-node:hover .timeline-sub {
+  color: var(--blue-bright);
+  transform: translate3d(3px, 0, 0);
+}
 .timeline-ghost .timeline-top h3, .timeline-ghost .timeline-date { color: var(--text-muted); }
 
 /* sem cantos arredondados, exceto na seção de projetos */
