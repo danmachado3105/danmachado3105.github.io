@@ -1,16 +1,63 @@
-:root {
-  --color-background: #000000;
-  --color-surface: #0a0e1e;
-  --color-border: #2a2d38;
-  --color-accent: #3b8eff;
-  --color-accent-strong: #1450c9;
-  --color-text: #ffffff;
-  --color-text-muted: #9498a6;
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-background: #05070b;
+  --color-surface: #0b0f17;
+  --color-surface-raised: #101722;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-accent: #60a5fa;
+  --color-accent-strong: #2563eb;
+  --color-on-accent: #05070b;
+  --color-grid: rgba(226, 232, 240, 0.035);
+  --color-laser: rgba(148, 163, 184, 0.42);
+  --color-card-shadow: rgba(0, 0, 0, 0.28);
+
+  --bg: var(--color-background);
+  --bg-soft: var(--color-surface-raised);
+  --card: var(--color-surface);
+  --border: var(--color-border);
+  --text: var(--color-text);
+  --text-muted: var(--color-text-muted);
+  --blue-deep: var(--color-accent-strong);
+  --blue-bright: var(--color-accent);
+
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --content-width: 1440px;
   --content-padding: clamp(20px, 4vw, 48px);
+  --max-width: var(--content-width);
   --motion-fast: 180ms;
   --motion-base: 300ms;
+  --theme-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --theme-duration: 0.6s;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --color-background: #e7edf4;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f1f5fa;
+  --color-border: rgba(46, 70, 105, 0.13);
+  --color-text: #172b45;
+  --color-text-muted: #526783;
+  --color-accent: #3973c7;
+  --color-accent-strong: #1d4e91;
+  --color-on-accent: #ffffff;
+  --color-grid: rgba(42, 73, 120, 0.045);
+  --color-laser: rgba(45, 88, 145, 0.44);
+  --color-card-shadow: rgba(26, 46, 74, 0.1);
+
+  --bg: var(--color-background);
+  --bg-soft: var(--color-surface-raised);
+  --card: var(--color-surface);
+  --border: var(--color-border);
+  --text: var(--color-text);
+  --text-muted: var(--color-text-muted);
+  --blue-deep: var(--color-accent-strong);
+  --blue-bright: var(--color-accent);
 }

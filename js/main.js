@@ -6,6 +6,7 @@ const themeToggle = document.getElementById('theme-toggle');
 
 function updateThemeToggle() {
   const isLightMode = document.body.classList.contains('light-mode');
+  document.documentElement.dataset.theme = isLightMode ? 'light' : 'dark';
   themeToggle.setAttribute('aria-label', isLightMode ? 'Ativar modo escuro' : 'Ativar modo claro');
   themeToggle.setAttribute('aria-pressed', String(isLightMode));
 }

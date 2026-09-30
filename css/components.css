@@ -38,18 +38,90 @@ h4,
   cursor: pointer;
 }
 
-.nav-cv-btn,
-.btn,
-.project-link,
-.contact-link {
-  transition-duration: var(--motion-fast);
+.project-card,
+.stack-item,
+.formacao-item,
+.contact-link,
+.stack-group,
+.social-icon,
+.carousel-btn,
+.dock-btn,
+.nav-github {
+  position: relative;
+  isolation: isolate;
+  border-color: var(--border);
+  transition:
+    background-color var(--theme-duration) var(--theme-ease),
+    color var(--theme-duration) var(--theme-ease),
+    border-color var(--theme-duration) var(--theme-ease),
+    transform var(--motion-base) var(--theme-ease),
+    box-shadow var(--motion-base) var(--theme-ease);
 }
 
 .project-card,
 .stack-item,
 .formacao-item,
-.contact-link {
-  will-change: transform;
+.contact-link,
+.stack-group {
+  box-shadow: 0 10px 30px -10px var(--color-card-shadow);
+}
+
+.project-card::before,
+.stack-item::before,
+.formacao-item::before,
+.contact-link::before,
+.stack-group::before,
+.social-icon::before,
+.carousel-btn::before,
+.dock-btn::before,
+.nav-github::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    128deg,
+    transparent 8%,
+    var(--color-laser) 44%,
+    color-mix(in srgb, var(--blue-bright) 48%, transparent) 52%,
+    transparent 92%
+  );
+  opacity: 0;
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity var(--motion-base) var(--theme-ease);
+}
+
+.project-card:hover::before,
+.stack-item:hover::before,
+.formacao-item:hover::before,
+.contact-link:hover::before,
+.stack-group:hover::before,
+.contact-link:focus-visible::before,
+.social-icon:hover::before,
+.social-icon:focus-visible::before,
+.carousel-btn:hover::before,
+.carousel-btn:focus-visible::before,
+.dock-btn:hover::before,
+.dock-btn:focus-visible::before,
+.nav-github:hover::before,
+.nav-github:focus-visible::before {
+  opacity: 1;
+}
+
+.project-card {
+  transition-property: background-color, color, border-color, transform, box-shadow, opacity;
+}
+
+.stack-item,
+.formacao-item,
+.contact-link,
+.stack-group {
+  transition-property: background-color, color, border-color, transform, box-shadow, opacity;
 }
 
 .project-link:focus-visible,
