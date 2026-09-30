@@ -377,7 +377,6 @@
           <!-- Card: Workzen -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">01</span>
               <img src="assets/workzen.png" alt="Tela do Workzen" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -398,7 +397,6 @@
           <!-- Card: Redify -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">02</span>
               <img src="assets/Redify.png" alt="Tela do Redify" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -410,7 +408,7 @@
               </p>
             </div>
             <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+              <a href="https://github.com/danmachado3105/Redify-app" target="_blank" rel="noopener" class="project-link">
                 Ver repositório ↗
               </a>
             </div>
@@ -419,7 +417,6 @@
           <!-- Card: Velun Tech -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">03</span>
               <img src="assets/Velun-tech.png" alt="Tela do Velun Tech" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -440,7 +437,6 @@
           <!-- Card: FP Selection -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">04</span>
               <img src="assets/fp-sellection.png" alt="Tela do FP Selection" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -461,7 +457,6 @@
           <!-- Card: Velun AI -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">05</span>
               <img src="assets/velun-ai.png" alt="Tela do Velun AI" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -473,7 +468,7 @@
               </p>
             </div>
             <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="project-link">
+              <a href="https://github.com/danmachado3105/Velun-AI" target="_blank" rel="noopener" class="project-link">
                 Ver repositório ↗
               </a>
             </div>
@@ -482,7 +477,6 @@
           <!-- Card: Velun ZAP -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">06</span>
               <img src="assets/Velun-zap.png" alt="Tela do Velun ZAP" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -503,7 +497,6 @@
           <!-- Card: Taskflow -->
           <article class="project-card">
             <div class="project-card-image">
-              <span class="project-number">07</span>
               <img src="assets/Taskflow.png" alt="Tela do Taskflow" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -524,7 +517,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">01</span>
               <img src="assets/workzen.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -542,7 +534,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">02</span>
               <img src="assets/Redify.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -560,7 +551,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">03</span>
               <img src="assets/Velun-tech.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -578,7 +568,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">04</span>
               <img src="assets/fp-sellection.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -596,7 +585,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">05</span>
               <img src="assets/velun-ai.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -614,7 +602,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">06</span>
               <img src="assets/Velun-zap.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -632,7 +619,6 @@
 
           <article class="project-card" aria-hidden="true">
             <div class="project-card-image">
-              <span class="project-number">07</span>
               <img src="assets/Taskflow.png" alt="" loading="lazy">
             </div>
             <div class="project-card-top">
@@ -655,10 +641,16 @@
         <div class="carousel-scrollbar" id="projectsScrollbar" role="scrollbar" aria-label="Posição dos projetos" aria-controls="projectsViewport" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
           <span class="carousel-scrollbar-thumb" id="projectsScrollbarThumb"></span>
         </div>
+        <div class="carousel-pagination" id="projectsPagination" role="group" aria-label="Escolher projeto"></div>
         <button class="carousel-btn" id="carouselNext" type="button" aria-label="Próximo projeto">›</button>
       </div>
 
     </section>
+
+    <dialog class="project-dialog" id="projectDialog" aria-label="Visualização do projeto">
+      <button class="project-dialog-close" id="projectDialogClose" type="button" aria-label="Fechar visualização">&times;</button>
+      <img class="project-dialog-image" id="projectDialogImage" alt="">
+    </dialog>
 
     <!-- ===== CONTATO ===== -->
     <section id="contato" class="section section-contact">

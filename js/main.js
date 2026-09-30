@@ -139,8 +139,13 @@ const carouselPrev = document.getElementById('carouselPrev');
 const carouselNext = document.getElementById('carouselNext');
 const projectsScrollbar = document.getElementById('projectsScrollbar');
 const projectsScrollbarThumb = document.getElementById('projectsScrollbarThumb');
+const projectsPagination = document.getElementById('projectsPagination');
+const projectDialog = document.getElementById('projectDialog');
+const projectDialogImage = document.getElementById('projectDialogImage');
+const projectDialogClose = document.getElementById('projectDialogClose');
 
-if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarThumb) {
+if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarThumb && projectsPagination
+  && projectDialog && projectDialogImage && projectDialogClose) {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let originalCards = [];
   let loopWidth = 0;
@@ -152,6 +157,8 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
   let isDraggingCards = false;
   let suppressCardClick = false;
   let scrollbarPointerOffset = 0;
+  let activeProjectIndex = -1;
+  let activeDialogProject = 0;
   const AUTO_SPEED = 26;
   const MANUAL_EASE = 0.12;
 
@@ -171,7 +178,29 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
       card.classList.contains('project-card') && !card.hasAttribute('aria-hidden')
     ));
 
+    originalCards.forEach((card) => {
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-haspopup', 'dialog');
+      card.setAttribute('aria-label', `Ver detalhes: ${card.querySelector('h3')?.textContent.trim() || 'projeto'}`);
+    });
+
     originalCards.forEach((card) => projectsTrack.append(markClone(card.cloneNode(true))));
+    projectsPagination.replaceChildren(...originalCards.map((card, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Ir para ${card.querySelector('h3')?.textContent.trim() || `projeto ${index + 1}`}`);
+      dot.addEventListener('click', () => {
+        if (loopWidth <= 0 || originalCards.length < 2) return;
+        const step = originalCards[1].offsetLeft - originalCards[0].offsetLeft;
+        let distance = index * step - (offset % loopWidth);
+        if (distance > loopWidth / 2) distance -= loopWidth;
+        if (distance < -loopWidth / 2) distance += loopWidth;
+        targetOffset = offset + distance;
+        paused = false;
+      });
+      return dot;
+    }));
     measureLoop();
   }
 
@@ -198,6 +227,20 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
     projectsScrollbar.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
     projectsScrollbar.setAttribute('aria-valuetext', `${Math.round(progress * 100)}% do ciclo de projetos`);
     projectsScrollbar.toggleAttribute('aria-disabled', loopWidth <= 0);
+  }
+
+  function updateActiveProjectDot() {
+    if (originalCards.length === 0) return;
+    const step = originalCards.length > 1
+      ? originalCards[1].offsetLeft - originalCards[0].offsetLeft
+      : 0;
+    const index = step > 0 ? Math.floor(offset / step) % originalCards.length : 0;
+    if (index === activeProjectIndex) return;
+    activeProjectIndex = index;
+    [...projectsPagination.children].forEach((dot, dotIndex) => {
+      if (dotIndex === index) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
   }
 
   function wrapOffset() {
@@ -230,6 +273,7 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
       updateProjectsScrollbar();
     }
 
+    updateActiveProjectDot();
     window.requestAnimationFrame(renderProjects);
   }
 
@@ -244,6 +288,7 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
       targetOffset = null;
       projectsTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
       updateProjectsScrollbar();
+      updateActiveProjectDot();
     }
   }
 
@@ -253,6 +298,32 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
     targetOffset = offset + direction * step;
     paused = false;
   }
+
+  function showProjectDetails(index) {
+    if (originalCards.length === 0) return;
+    activeDialogProject = (index + originalCards.length) % originalCards.length;
+    const card = originalCards[activeDialogProject];
+    const image = card.querySelector('.project-card-image img');
+
+    projectDialogImage.src = image?.getAttribute('src') || '';
+    projectDialogImage.alt = image?.alt || 'Imagem do projeto';
+    if (!projectDialog.open) projectDialog.showModal();
+  }
+
+  projectDialogClose.addEventListener('click', () => projectDialog.close());
+  projectDialog.addEventListener('click', (event) => {
+    if (event.target === projectDialog) projectDialog.close();
+  });
+  projectDialog.addEventListener('close', () => {
+    paused = prefersReducedMotion.matches;
+  });
+  document.addEventListener('keydown', (event) => {
+    if (!projectDialog.open) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      projectDialog.close();
+    }
+  });
 
   if (carouselPrev) carouselPrev.addEventListener('click', () => moveByCard(-1));
   if (carouselNext) carouselNext.addEventListener('click', () => moveByCard(1));
@@ -315,6 +386,7 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
       targetOffset = null;
       projectsTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
       updateProjectsScrollbar();
+      updateActiveProjectDot();
     }
   });
 
@@ -330,13 +402,37 @@ if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarT
   projectsViewport.addEventListener('pointerup', endCardDrag);
   projectsViewport.addEventListener('pointercancel', endCardDrag);
   projectsViewport.addEventListener('click', (event) => {
+    if (event.target.closest('a, button')) return;
+    const card = event.target.closest('.project-card');
+    if (!card) return;
+    const cardIndex = Array.prototype.indexOf.call(projectsTrack.children, card);
+    if (cardIndex >= 0) {
+      paused = true;
+      showProjectDetails(cardIndex % originalCards.length);
+    }
+  });
+  projectsViewport.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    if (event.target.closest('a, button')) return;
+    const card = event.target.closest('.project-card');
+    if (!card) return;
+    event.preventDefault();
+    const cardIndex = Array.prototype.indexOf.call(projectsTrack.children, card);
+    if (cardIndex >= 0) {
+      paused = true;
+      showProjectDetails(cardIndex % originalCards.length);
+    }
+  });
+  projectsViewport.addEventListener('click', (event) => {
     if (!suppressCardClick) return;
     event.preventDefault();
     event.stopPropagation();
     suppressCardClick = false;
   }, true);
   projectsViewport.addEventListener('mouseenter', () => { paused = true; });
-  projectsViewport.addEventListener('mouseleave', () => { paused = prefersReducedMotion.matches || pointerStart !== null; });
+  projectsViewport.addEventListener('mouseleave', () => {
+    paused = projectDialog.open || prefersReducedMotion.matches || pointerStart !== null;
+  });
   prefersReducedMotion.addEventListener('change', (event) => { paused = event.matches; });
 
   rebuildLoop();
