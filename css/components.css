@@ -1,4 +1,43 @@
 /* Pequenos refinamentos compartilhados entre os componentes existentes. */
+a,
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+.eyebrow,
+.annotation,
+.project-number,
+.timeline-date,
+.stack-status,
+.contact-label,
+.contact-arrow,
+.footer-logo,
+.footer-author,
+.footer-copyright,
+.dock-item svg,
+[aria-hidden='true'] {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.btn,
+.project-link,
+.social-icon,
+.dock-item,
+.dock-btn,
+.carousel-btn,
+.carousel-scrollbar,
+.contact-link {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
 .nav-cv-btn,
 .btn,
 .project-link,

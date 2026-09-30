@@ -41,7 +41,9 @@
 }
 
 .project-card {
+  -webkit-user-select: none;
   user-select: none;
+  cursor: default;
 }
 
 .carousel-controls {
@@ -91,6 +93,17 @@
 .carousel-scrollbar:focus-visible .carousel-scrollbar-thumb,
 .carousel-scrollbar.is-dragging .carousel-scrollbar-thumb {
   height: 8px;
+}
+
+@media (min-width: 769px) {
+  .carousel-controls {
+    width: min(100%, 360px);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .carousel-btn {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {

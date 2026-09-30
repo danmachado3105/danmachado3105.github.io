@@ -14,5 +14,6 @@ body {
 }
 
 [aria-hidden='true'] {
+  -webkit-user-select: none;
   user-select: none;
 }
