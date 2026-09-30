@@ -159,6 +159,14 @@
           </div>
         </div>
       </div>
+
+      <div class="carousel-controls" aria-label="Navegação dos projetos">
+        <button class="carousel-btn" id="carouselPrev" type="button" aria-label="Projeto anterior">‹</button>
+        <div class="carousel-scrollbar" id="projectsScrollbar" role="scrollbar" aria-label="Posição dos projetos" aria-controls="projectsViewport" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <span class="carousel-scrollbar-thumb" id="projectsScrollbarThumb"></span>
+        </div>
+        <button class="carousel-btn" id="carouselNext" type="button" aria-label="Próximo projeto">›</button>
+      </div>
     </section>
 
     <!-- ===== SOBRE MIM ===== -->
@@ -347,14 +355,14 @@
     </section>
 
     <!-- ===== PROJETOS ===== -->
-    <section id="projetos" class="section">
+    <section id="projetos" class="section projects-section">
       <div class="section-heading reveal">
         <h2>PROJETOS</h2>
         <span class="annotation">sete lançamentos reais</span>
       </div>
 
-      <div class="projects-viewport" id="projectsViewport">
-        <div class="projects-grid" id="projectsTrack">
+      <div class="projects-viewport projects-wrapper" id="projectsViewport">
+        <div class="projects-grid projects-track" id="projectsTrack">
 
           <!-- Card: Workzen -->
           <article class="project-card">
@@ -632,10 +640,6 @@
         </div>
       </div>
 
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="carouselPrev" aria-label="Projeto anterior">‹</button>
-        <button class="carousel-btn" id="carouselNext" aria-label="Próximo projeto">›</button>
-      </div>
     </section>
 
     <!-- ===== CONTATO ===== -->
