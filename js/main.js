@@ -70,21 +70,51 @@ if (prefersReducedMotion) {
   revealEls.forEach((el) => revealObserver.observe(el));
 }
 
-// Efeito 3D sutil ao passar o mouse nos cards de projeto
-if (!prefersReducedMotion) {
-  document.querySelectorAll('.project-card').forEach((card) => {
-    const maxTilt = 6; // graus, mantido sutil de propósito
+// Revelação dos títulos dentro de máscaras ao entrar na viewport
+const headingRevealEls = document.querySelectorAll('.heading-reveal');
 
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(900px) rotateY(${x * maxTilt * 2}deg) rotateX(${-y * maxTilt * 2}deg) translateY(-4px)`;
+if (!prefersReducedMotion && window.gsap && window.ScrollTrigger) {
+  window.gsap.registerPlugin(window.ScrollTrigger);
+  let refreshedAfterInitialScroll = false;
+
+  function refreshAfterInitialScroll() {
+    if (refreshedAfterInitialScroll) return;
+    refreshedAfterInitialScroll = true;
+    requestAnimationFrame(() => requestAnimationFrame(() => window.ScrollTrigger.refresh()));
+  }
+
+  window.addEventListener('scroll', refreshAfterInitialScroll, { once: true, passive: true });
+
+  function initializeHeadingReveals() {
+    window.ScrollTrigger.refresh();
+
+    headingRevealEls.forEach((heading) => {
+      window.gsap.fromTo(heading,
+        { yPercent: 100, opacity: 0 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 1.1,
+          ease: 'power3.out',
+          force3D: true,
+          scrollTrigger: {
+            trigger: heading.closest('.heading-mask'),
+            start: 'top 88%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
     });
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
+    window.ScrollTrigger.refresh();
+  }
+
+  initializeHeadingReveals();
+  window.addEventListener('load', () => window.ScrollTrigger.refresh(), { once: true });
+} else {
+  headingRevealEls.forEach((heading) => {
+    heading.style.opacity = '1';
+    heading.style.transform = 'none';
   });
 }
 

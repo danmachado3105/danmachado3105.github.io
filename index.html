@@ -50,6 +50,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='black'/><text x='32' y='34' font-family='Arial, sans-serif' font-weight='bold' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'>DM</text></svg>">
   <link rel="apple-touch-icon" href="assets/danilomachado.png">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
 
@@ -84,6 +86,7 @@
 
     <!-- ===== HERO / SOBRE MIM ===== -->
     <section id="top" class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
 
       <div class="bg-ambient" aria-hidden="true">
         <div class="bg-blob bg-blob-1"></div>
@@ -171,7 +174,7 @@
 
         <div class="about-content reveal">
           <p class="about-eyebrow">QUEM EU SOU</p>
-          <h2>SOBRE MIM</h2>
+          <h2><span class="heading-mask"><span class="heading-reveal">SOBRE MIM</span></span></h2>
           <p>
             Meu nome é Danilo Machado, tenho 19 anos e moro no Rio de Janeiro.
             Sou formado em Técnico em Desenvolvimento de Sistemas e atualmente
@@ -204,7 +207,7 @@
     <!-- ===== TECNOLOGIAS ===== -->
     <section id="tecnologias" class="section stack-section">
       <div class="section-heading reveal">
-        <h2>STACK &amp; FERRAMENTAS</h2>
+        <h2><span class="heading-mask"><span class="heading-reveal">STACK &amp; FERRAMENTAS</span></span></h2>
         <span class="annotation">em evolução constante</span>
       </div>
 
@@ -305,7 +308,7 @@
     <!-- ===== FORMAÇÃO ===== -->
     <section id="formacao" class="section">
       <div class="section-heading reveal">
-        <h2>FORMAÇÃO ACADÊMICA</h2>
+        <h2><span class="heading-mask"><span class="heading-reveal">FORMAÇÃO ACADÊMICA</span></span></h2>
         <span class="annotation">minha trajetória</span>
       </div>
 
@@ -350,7 +353,7 @@
     <!-- ===== PROJETOS ===== -->
     <section id="projetos" class="section projects-section">
       <div class="section-heading reveal">
-        <h2>PROJETOS</h2>
+        <h2><span class="heading-mask"><span class="heading-reveal">PROJETOS</span></span></h2>
         <span class="annotation">sete lançamentos reais</span>
       </div>
 
@@ -646,7 +649,7 @@
     <!-- ===== CONTATO ===== -->
     <section id="contato" class="section section-contact">
       <div class="section-heading reveal">
-        <h2>CONTATO</h2>
+        <h2><span class="heading-mask"><span class="heading-reveal">CONTATO</span></span></h2>
         <span class="annotation">bora conversar</span>
       </div>
 

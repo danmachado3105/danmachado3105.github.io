@@ -13,14 +13,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .projects-wrapper {
   width: 100%;
   max-width: none;
-  overflow: hidden;
-  overflow-y: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding-block: 14px;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
   touch-action: pan-y;
@@ -38,6 +39,18 @@
 .projects-track {
   width: max-content;
   will-change: transform;
+}
+
+.heading-mask {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.heading-reveal {
+  display: inline-block;
+  max-width: 100%;
+  will-change: transform, opacity;
 }
 
 .project-card {
