@@ -109,85 +109,217 @@ const carouselNext = document.getElementById('carouselNext');
 const projectsScrollbar = document.getElementById('projectsScrollbar');
 const projectsScrollbarThumb = document.getElementById('projectsScrollbarThumb');
 
-if (projectsViewport && projectsTrack && carouselPrev && carouselNext && projectsScrollbar && projectsScrollbarThumb) {
-  projectsTrack.querySelectorAll('.project-card[aria-hidden="true"]').forEach((card) => card.remove());
+if (projectsViewport && projectsTrack && projectsScrollbar && projectsScrollbarThumb) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let originalCards = [];
+  let loopWidth = 0;
+  let offset = 0;
+  let targetOffset = null;
+  let paused = prefersReducedMotion.matches;
+  let lastFrameTime = 0;
+  let pointerStart = null;
+  let isDraggingCards = false;
+  let suppressCardClick = false;
+  let scrollbarPointerOffset = 0;
+  const AUTO_SPEED = 26;
+  const MANUAL_EASE = 0.12;
 
-  const scrollAmount = () => {
-    const firstCard = projectsTrack.querySelector('.project-card');
-    const gap = Number.parseFloat(window.getComputedStyle(projectsTrack).columnGap) || 0;
-    return firstCard ? firstCard.getBoundingClientRect().width + gap : projectsViewport.clientWidth;
+  function markClone(card) {
+    card.classList.add('is-carousel-clone');
+    card.setAttribute('aria-hidden', 'true');
+    card.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((element) => {
+      element.setAttribute('tabindex', '-1');
+    });
+    return card;
+  }
+
+  function rebuildLoop() {
+    projectsTrack.querySelectorAll('.is-carousel-clone').forEach((card) => card.remove());
+    projectsTrack.querySelectorAll('.project-card[aria-hidden="true"]:not(.is-carousel-clone)').forEach((card) => card.remove());
+    originalCards = Array.from(projectsTrack.children).filter((card) => (
+      card.classList.contains('project-card') && !card.hasAttribute('aria-hidden')
+    ));
+
+    originalCards.forEach((card) => projectsTrack.append(markClone(card.cloneNode(true))));
+    measureLoop();
+  }
+
+  function measureLoop() {
+    if (originalCards.length === 0) {
+      loopWidth = 0;
+      return;
+    }
+
+    const firstClone = projectsTrack.children[originalCards.length];
+    loopWidth = firstClone ? firstClone.offsetLeft - projectsTrack.children[0].offsetLeft : 0;
+    if (loopWidth > 0) offset %= loopWidth;
+    updateProjectsScrollbar();
   }
 
   function updateProjectsScrollbar() {
-    const maxScroll = projectsViewport.scrollWidth - projectsViewport.clientWidth;
     const railWidth = projectsScrollbar.clientWidth;
-    const thumbWidth = maxScroll > 0
-      ? Math.max(36, railWidth * (projectsViewport.clientWidth / projectsViewport.scrollWidth))
-      : railWidth;
+    const thumbWidth = Math.min(railWidth, Math.max(48, railWidth * 0.2));
     const maxThumbTravel = Math.max(0, railWidth - thumbWidth);
-    const progress = maxScroll > 0 ? projectsViewport.scrollLeft / maxScroll : 0;
+    const progress = loopWidth > 0 ? offset / loopWidth : 0;
 
     projectsScrollbarThumb.style.width = `${thumbWidth}px`;
     projectsScrollbarThumb.style.transform = `translate3d(${maxThumbTravel * progress}px, 0, 0)`;
     projectsScrollbar.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
-    projectsScrollbar.setAttribute('aria-valuetext', `${Math.round(progress * 100)}% dos projetos`);
-    projectsScrollbar.toggleAttribute('aria-disabled', maxScroll <= 0);
+    projectsScrollbar.setAttribute('aria-valuetext', `${Math.round(progress * 100)}% do ciclo de projetos`);
+    projectsScrollbar.toggleAttribute('aria-disabled', loopWidth <= 0);
   }
 
-  function scrollToPointer(clientX) {
+  function wrapOffset() {
+    if (loopWidth <= 0 || (offset >= 0 && offset < loopWidth)) return;
+    offset = ((offset % loopWidth) + loopWidth) % loopWidth;
+    if (targetOffset !== null) {
+      targetOffset = ((targetOffset % loopWidth) + loopWidth) % loopWidth;
+    }
+  }
+
+  function renderProjects(time) {
+    if (!lastFrameTime) lastFrameTime = time;
+    const delta = Math.min((time - lastFrameTime) / 1000, 0.05);
+    lastFrameTime = time;
+
+    if (loopWidth > 0 && !paused) {
+      if (targetOffset !== null) {
+        const difference = targetOffset - offset;
+        offset += difference * Math.min(MANUAL_EASE * (delta * 60), 1);
+        if (Math.abs(difference) < 0.5) {
+          offset = targetOffset;
+          targetOffset = null;
+        }
+      } else {
+        offset += AUTO_SPEED * delta;
+      }
+
+      wrapOffset();
+      projectsTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+      updateProjectsScrollbar();
+    }
+
+    window.requestAnimationFrame(renderProjects);
+  }
+
+  function jumpToScrollbar(clientX, pointerOffset = projectsScrollbarThumb.getBoundingClientRect().width / 2) {
     const railRect = projectsScrollbar.getBoundingClientRect();
     const thumbWidth = projectsScrollbarThumb.getBoundingClientRect().width;
-    const maxThumbTravel = Math.max(0, railRect.width - thumbWidth);
-    const thumbPosition = Math.min(maxThumbTravel, Math.max(0, clientX - railRect.left - thumbWidth / 2));
-    const maxScroll = projectsViewport.scrollWidth - projectsViewport.clientWidth;
-    projectsViewport.scrollLeft = maxThumbTravel > 0 ? (thumbPosition / maxThumbTravel) * maxScroll : 0;
+    const travel = Math.max(0, railRect.width - thumbWidth);
+    const thumbPosition = Math.min(travel, Math.max(0, clientX - railRect.left - pointerOffset));
+
+    if (travel > 0 && loopWidth > 0) {
+      offset = (thumbPosition / travel) * loopWidth;
+      targetOffset = null;
+      projectsTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+      updateProjectsScrollbar();
+    }
   }
 
-  carouselPrev.addEventListener('click', () => {
-    projectsViewport.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-  });
+  function moveByCard(direction) {
+    if (originalCards.length < 2) return;
+    const step = originalCards[1].offsetLeft - originalCards[0].offsetLeft;
+    targetOffset = offset + direction * step;
+    paused = false;
+  }
 
-  carouselNext.addEventListener('click', () => {
-    projectsViewport.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-  });
-
-  projectsViewport.addEventListener('scroll', updateProjectsScrollbar, { passive: true });
+  if (carouselPrev) carouselPrev.addEventListener('click', () => moveByCard(-1));
+  if (carouselNext) carouselNext.addEventListener('click', () => moveByCard(1));
 
   projectsScrollbar.addEventListener('pointerdown', (event) => {
+    const thumbRect = projectsScrollbarThumb.getBoundingClientRect();
+    scrollbarPointerOffset = event.target === projectsScrollbarThumb
+      ? event.clientX - thumbRect.left
+      : thumbRect.width / 2;
+    paused = true;
     projectsScrollbar.setPointerCapture(event.pointerId);
     projectsScrollbar.classList.add('is-dragging');
-    scrollToPointer(event.clientX);
+    jumpToScrollbar(event.clientX, scrollbarPointerOffset);
   });
 
   projectsScrollbar.addEventListener('pointermove', (event) => {
-    if (projectsScrollbar.hasPointerCapture(event.pointerId)) scrollToPointer(event.clientX);
+    if (projectsScrollbar.hasPointerCapture(event.pointerId)) jumpToScrollbar(event.clientX, scrollbarPointerOffset);
   });
 
   function endScrollbarDrag(event) {
-    if (projectsScrollbar.hasPointerCapture(event.pointerId)) {
-      projectsScrollbar.releasePointerCapture(event.pointerId);
-      projectsScrollbar.classList.remove('is-dragging');
-    }
+    if (!projectsScrollbar.hasPointerCapture(event.pointerId)) return;
+    projectsScrollbar.releasePointerCapture(event.pointerId);
+    projectsScrollbar.classList.remove('is-dragging');
+    paused = prefersReducedMotion.matches;
   }
 
   projectsScrollbar.addEventListener('pointerup', endScrollbarDrag);
   projectsScrollbar.addEventListener('pointercancel', endScrollbarDrag);
-  projectsScrollbar.addEventListener('click', (event) => scrollToPointer(event.clientX));
+  projectsScrollbar.addEventListener('click', (event) => {
+    if (event.target === projectsScrollbar) jumpToScrollbar(event.clientX);
+  });
   projectsScrollbar.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
-      projectsViewport.scrollBy({ left: (event.key === 'ArrowRight' ? 1 : -1) * scrollAmount(), behavior: 'smooth' });
-    }
-    if (event.key === 'Home' || event.key === 'End') {
-      event.preventDefault();
-      projectsViewport.scrollTo({ left: event.key === 'End' ? projectsViewport.scrollWidth : 0, behavior: 'smooth' });
+      moveByCard(event.key === 'ArrowRight' ? 1 : -1);
     }
   });
 
-  new ResizeObserver(updateProjectsScrollbar).observe(projectsViewport);
-  new ResizeObserver(updateProjectsScrollbar).observe(projectsTrack);
-  new MutationObserver(updateProjectsScrollbar).observe(projectsTrack, { childList: true });
-  updateProjectsScrollbar();
+  projectsViewport.addEventListener('pointerdown', (event) => {
+    if (event.button !== 0 && event.pointerType === 'mouse') return;
+    pointerStart = { x: event.clientX, y: event.clientY, offset };
+    isDraggingCards = false;
+    paused = true;
+  });
+
+  projectsViewport.addEventListener('pointermove', (event) => {
+    if (!pointerStart) return;
+    const deltaX = event.clientX - pointerStart.x;
+    const deltaY = event.clientY - pointerStart.y;
+
+    if (!isDraggingCards && Math.abs(deltaX) > 6 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      isDraggingCards = true;
+      projectsViewport.setPointerCapture(event.pointerId);
+    }
+
+    if (isDraggingCards) {
+      event.preventDefault();
+      offset = pointerStart.offset - deltaX;
+      if (loopWidth > 0) offset = ((offset % loopWidth) + loopWidth) % loopWidth;
+      targetOffset = null;
+      projectsTrack.style.transform = `translate3d(${-offset}px, 0, 0)`;
+      updateProjectsScrollbar();
+    }
+  });
+
+  function endCardDrag(event) {
+    if (!pointerStart) return;
+    suppressCardClick = isDraggingCards;
+    pointerStart = null;
+    isDraggingCards = false;
+    if (projectsViewport.hasPointerCapture(event.pointerId)) projectsViewport.releasePointerCapture(event.pointerId);
+    paused = prefersReducedMotion.matches;
+  }
+
+  projectsViewport.addEventListener('pointerup', endCardDrag);
+  projectsViewport.addEventListener('pointercancel', endCardDrag);
+  projectsViewport.addEventListener('click', (event) => {
+    if (!suppressCardClick) return;
+    event.preventDefault();
+    event.stopPropagation();
+    suppressCardClick = false;
+  }, true);
+  projectsViewport.addEventListener('mouseenter', () => { paused = true; });
+  projectsViewport.addEventListener('mouseleave', () => { paused = prefersReducedMotion.matches || pointerStart !== null; });
+  prefersReducedMotion.addEventListener('change', (event) => { paused = event.matches; });
+
+  rebuildLoop();
+  new ResizeObserver(measureLoop).observe(projectsViewport);
+  new ResizeObserver(measureLoop).observe(projectsTrack);
+
+  new MutationObserver((records) => {
+    if (records.some((record) => [...record.addedNodes, ...record.removedNodes]
+      .some((node) => node.nodeType === Node.ELEMENT_NODE && !node.classList.contains('is-carousel-clone')))) {
+      rebuildLoop();
+    }
+  }).observe(projectsTrack, { childList: true });
+
+  window.requestAnimationFrame(renderProjects);
 }
 
 const timelineEl = document.getElementById('timeline');
