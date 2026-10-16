@@ -1,752 +1,283 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="theme-color" content="#000000">
-  <meta name="color-scheme" content="dark light">
-  <meta name="author" content="Danilo Machado">
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="Portfólio de Danilo Machado, desenvolvedor de software com foco em JavaScript, Python, APIs e soluções digitais.">
-  <link rel="canonical" href="https://danmachado3105.github.io/">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Danilo Machado | Desenvolvedor de Software</title>
-
+  <meta name="description" content="Portfólio de Danilo Machado, desenvolvedor de software com foco em JavaScript, Python, APIs e soluções digitais.">
+  <meta name="theme-color" content="#100d0b">
+  <link rel="canonical" href="https://danmachado3105.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Danilo Machado">
   <meta property="og:title" content="Danilo Machado | Desenvolvedor de Software">
   <meta property="og:description" content="Conheça os projetos, tecnologias, formação e trajetória de Danilo Machado.">
   <meta property="og:url" content="https://danmachado3105.github.io/">
   <meta property="og:image" content="https://danmachado3105.github.io/assets/perfil.jpg">
-  <meta property="og:image:alt" content="Foto de Danilo Machado">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Danilo Machado | Desenvolvedor de Software">
-  <meta name="twitter:description" content="Projetos, tecnologias e trajetória de Danilo Machado na área de desenvolvimento de software.">
-  <meta name="twitter:image" content="https://danmachado3105.github.io/assets/perfil.jpg">
-  <meta name="twitter:image:alt" content="Foto de Danilo Machado">
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Danilo Machado",
-      "jobTitle": "Desenvolvedor de Software",
-      "url": "https://danmachado3105.github.io/",
-      "image": "https://danmachado3105.github.io/assets/perfil.jpg",
-      "sameAs": [
-        "https://github.com/danmachado3105",
-        "https://www.linkedin.com/in/danilomachado3105"
-      ]
-    }
-  </script>
-
-  <!-- Fontes: Space Grotesk (títulos), Inter (corpo), JetBrains Mono (tags/código) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='black'/><text x='32' y='34' font-family='Arial, sans-serif' font-weight='bold' font-size='32' fill='white' text-anchor='middle' dominant-baseline='middle'>DM</text></svg>">
-  <link rel="apple-touch-icon" href="assets/danilomachado.png">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='black'/><text x='32' y='34' font-family='Arial' font-weight='bold' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>DM</text></svg>">
 </head>
 <body>
+  <div class="cursor" aria-hidden="true"><span>Abrir</span></div>
 
-  <nav class="side-dock" aria-label="Navegação principal">
-    <a href="#top" class="dock-item" data-target="top" aria-label="Início">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-    </a>
-    <a href="#sobre" class="dock-item" data-target="sobre" aria-label="Sobre mim">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-3.4 3.1-5 7-5s6.2 1.6 7 5"/></svg>
-    </a>
-    <a href="#tecnologias" class="dock-item" data-target="tecnologias" aria-label="Tecnologias">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6 2 12l6 6"/><path d="M16 6l6 6-6 6"/></svg>
-    </a>
-    <a href="#formacao" class="dock-item" data-target="formacao" aria-label="Formação">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
-    </a>
-    <a href="#projetos" class="dock-item" data-target="projetos" aria-label="Projetos">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>
-    </a>
-    <a href="#contato" class="dock-item" data-target="contato" aria-label="Contato">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
-    </a>
-    <button id="theme-toggle" class="dock-btn" type="button" aria-label="Ativar modo claro" aria-pressed="false">
-      <span class="theme-switch" aria-hidden="true"><span class="theme-switch-thumb"></span></span>
-    </button>
-  </nav>
+  <header class="header" id="header">
+    <a href="#top" class="logo" aria-label="Início">DM<span>.</span></a>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <span class="nav-ind" aria-hidden="true"></span>
+      <a href="#sobre" data-sec="sobre">Sobre</a>
+      <a href="#stack" data-sec="stack">Stack</a>
+      <a href="#formacao" data-sec="formacao">Formação</a>
+      <a href="#projetos" data-sec="projetos">Projetos</a>
+      <a href="#contato" data-sec="contato">Contato</a>
+    </nav>
+    <a href="assets/curriculo_danilo_machado.pdf" download class="btn btn-sm hd-cv" data-magnetic>Currículo ↓</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+  </header>
 
-  <!-- Barra de progresso de leitura -->
-  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollProgress"></div></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre">Sobre</a>
+    <a href="#stack">Stack</a>
+    <a href="#formacao">Formação</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </div>
 
   <main>
+    <!-- HERO -->
+    <section class="hero" id="top" data-theme="hero">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
 
-    <!-- ===== HERO / SOBRE MIM ===== -->
-    <section id="top" class="hero">
-      <div class="hero-glow" aria-hidden="true"></div>
-
-      <div class="bg-ambient" aria-hidden="true">
-        <div class="bg-blob bg-blob-1"></div>
-        <div class="bg-blob bg-blob-2"></div>
-        <div class="bg-blob bg-blob-3"></div>
-        <div class="bg-grid"></div>
+      <div class="hero-top mono">
+        <span>Portfólio — 2026</span>
+        <span>Rio de Janeiro, BR · <b id="clock">--:--</b></span>
       </div>
 
-      <div class="hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">// DESENVOLVEDOR DE SOFTWARE</p>
-          <h1 class="hero-title">
-            Olá, eu sou <span class="highlight">Danilo Machado</span><br>
-            Desenvolvo soluções para problemas reais.
-          </h1>
-          <p class="hero-sub">
-            Estudante de Engenharia de Software e técnico em Desenvolvimento de Sistemas, com conhecimentos em JavaScript, Python, APIs e Git. Busco evoluir constantemente como desenvolvedor, colocando em prática o que aprendo por meio de projetos e desafios reais.
-          </p>
+      <div class="hero-stage">
+        <h1 class="hero-title" aria-label="Danilo Machado">
+          <span class="ln"><span>Danilo</span></span>
+          <span class="ln l2"><span>Machado</span></span>
+        </h1>
 
-          <div class="hero-actions">
-            <a href="assets/curriculo_danilo_machado.pdf" download class="btn btn-primary">
-              ↓ Baixar Currículo
-            </a>
-
-            <div class="social-icons">
-              <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
-                </svg>
-              </a>
-              <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
-                </svg>
-              </a>
-              <a href="mailto:danilomachado1227@gmail.com" aria-label="Email" class="social-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/>
-                  <path d="m2 6 10 7 10-7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hero-photo-wrap">
-          <div class="hero-photo-blob"></div>
-          <!-- grafo de nós decorativo, mesmo motivo visual usado no banner do LinkedIn -->
-          <svg class="hero-graph" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g class="graph-lines" stroke" stroke-width="1" opacity="0.45">
-              <line x1="30" y1="40" x2="80" y2="70" />
-              <line x1="80" y1="70" x2="60" y2="130" />
-              <line x1="250" y1="30" x2="270" y2="90" />
-            </g>
-            <g class="graph-nodes" fill="#3b8eff">
-              <circle class="node" cx="30" cy="40" r="4" />
-              <circle class="node" cx="80" cy="70" r="6" />
-              <circle class="node" cx="60" cy="130" r="4" />
-              <circle class="node" cx="250" cy="30" r="4" />
-              <circle class="node" cx="270" cy="90" r="5" />
-            </g>
-          </svg>
-          <img src="assets/perfil.jpg" alt="Foto de Danilo Machado" class="hero-photo">
-
-          <div class="hero-code-card" aria-hidden="true">
-            <div class="hero-code-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
-            <pre class="hero-code-text"><span class="code-kw">const</span> dev = {
-  name: <span class="code-str">'Danilo Machado'</span>,
-  stack: [<span class="code-str">'JS'</span>, <span class="code-str">'CSS'</span>, <span class="code-str">'Python'</span>],
-  status: <span class="code-str">'aprendizado contínuo'</span>
-};</pre>
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img src="assets/perfil.jpg" alt="Foto de Danilo Machado">
+            <figcaption></figcaption>
+          </figure>
+          <div class="badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+              <text><textPath href="#circ" textLength="272" lengthAdjust="spacing">FULL STACK EM FORMAÇÃO ✺ FULL STACK EM FORMAÇÃO ✺ </textPath></text>
+            </svg>
+            <span>✺</span>
           </div>
         </div>
       </div>
 
+      <div class="hero-bottom">
+        <div class="hero-copy">
+          <p class="hero-sub">Estudante de Engenharia de Software e técnico em Desenvolvimento de Sistemas. Transformo ideias em projetos reais com JavaScript, Python, APIs e Git.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#projetos" data-magnetic>Ver projetos</a>
+            <a class="btn ghost" href="assets/curriculo_danilo_machado.pdf" download data-magnetic>Baixar currículo ↓</a>
+          </div>
+        </div>
+        <p class="status mono"><i></i> Disponível para estágio</p>
+      </div>
     </section>
 
-    <!-- ===== SOBRE MIM ===== -->
-    <section id="sobre" class="about-section">
-      <div class="about-container">
-        <div class="about-photo-wrap reveal">
-          <img src="assets/danilomachado.png" alt="Danilo Machado" class="about-photo" loading="lazy">
-        </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>JavaScript</span><span>React</span><span>Python</span><span>APIs</span><span>Git</span><span>GitHub</span><span>HTML</span><span>CSS</span>
+      </div>
+    </div>
 
-        <div class="about-content reveal">
-          <p class="about-eyebrow">QUEM EU SOU</p>
-          <h2><span class="heading-mask"><span class="heading-reveal">SOBRE MIM</span></span></h2>
-          <p>
-            Meu nome é Danilo Machado, tenho 19 anos e moro no Rio de Janeiro.
-            Sou formado em Técnico em Desenvolvimento de Sistemas e atualmente
-            curso Engenharia de Software.
-          </p> 
-          <p>Sempre estive próximo da tecnologia
-            e, com o tempo, fui ficando cada vez mais curioso para entender o
-            que existe por trás das coisas que usamos no dia a dia. Foi essa
-            curiosidade, junto com a possibilidade de construir um estilo de
-            vida que combina comigo, que me levou para a programação. O que
-            mais gosto é de acompanhar uma ideia saindo do papel e tomando
-            forma até se transformar em algo que realmente funciona.</p>
-          <p>
-            Sou uma pessoa organizada, observadora, curiosa e proativa. Gosto
-            de aprender, explorar assuntos novos e entender os detalhes antes
-            de simplesmente aceitar algo como pronto. Quando começo alguma
-            coisa, procuro me dedicar de verdade e evoluir ao longo do caminho.
-            Fora da tecnologia, gosto de filmes, música e tudo que envolve o
-            universo nerd.
-          </p>
-          <p>
-            No futuro, quero continuar crescendo na área de tecnologia, adquirir
-            cada vez mais conhecimento e construir uma trajetória que me permita
-            conhecer novos lugares e, quem sabe, criar uma carreira internacional.
-          </p>
+    <!-- SOBRE -->
+    <section class="sec" id="sobre" data-theme="sobre">
+      <p class="label">01 — Sobre mim</p>
+      <h2 class="ttl"><span class="ln"><span>Sobre <span class="acc">mim</span></span></span></h2>
+      <p class="statement" data-words>Curioso por natureza, gosto de ver uma ideia sair do papel e virar algo que realmente funciona.</p>
+      <div class="about-grid">
+        <div class="ph"><img src="assets/danilomachado.png" alt="Danilo Machado" loading="lazy"></div>
+        <div class="about-text">
+          <p>Meu nome é Danilo Machado, tenho 19 anos e moro no Rio de Janeiro. Sou formado como Técnico em Desenvolvimento de Sistemas e atualmente curso Engenharia de Software.</p>
+          <p>Sempre estive próximo da tecnologia e, com o tempo, fui ficando cada vez mais curioso para entender o que existe por trás das coisas que usamos no dia a dia. Foi essa curiosidade, junto com a possibilidade de construir um estilo de vida que combina comigo, que me levou para a programação. O que mais gosto é de acompanhar uma ideia saindo do papel e tomando forma até virar algo que realmente funciona.</p>
+          <p>Sou uma pessoa organizada, observadora, curiosa e proativa. Gosto de aprender, explorar assuntos novos e entender os detalhes antes de simplesmente aceitar algo como pronto. Quando começo alguma coisa, procuro me dedicar de verdade e evoluir ao longo do caminho.</p>
+          <p>Fora da tecnologia, gosto de filmes, música e tudo que envolve o universo nerd.</p>
+          <p>No futuro, quero continuar crescendo na área de tecnologia, adquirir cada vez mais conhecimento e construir uma trajetória que me permita conhecer novos lugares e, quem sabe, criar uma carreira internacional.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== TECNOLOGIAS ===== -->
-    <section id="tecnologias" class="section stack-section">
-      <div class="section-heading reveal">
-        <h2><span class="heading-mask"><span class="heading-reveal">STACK &amp; FERRAMENTAS</span></span></h2>
-        <span class="annotation">em evolução constante</span>
-      </div>
-
-      <p class="stack-intro reveal">
-        Tecnologias que utilizo no desenvolvimento dos meus projetos e ferramentas
-        que fazem parte do meu processo de aprendizado.
-      </p>
-
-      <div class="stack-groups">
-        <article class="stack-group stack-group-development reveal">
-          <div class="stack-group-heading">
-            <span class="stack-group-index">01</span>
-            <h3>Desenvolvimento</h3>
-          </div>
-          <div class="stack-items stack-items-development">
-            <article class="stack-item">
-              <img class="stack-watermark" src="https://cdn.simpleicons.org/html5/E34F26" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>HTML</h4>
-              <p>Estruturo interfaces e páginas web com marcação semântica.</p>
-              <span class="stack-status">Conhecimento prático</span>
-            </article>
-            <article class="stack-item">
-              <img class="stack-watermark" src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>CSS</h4>
-              <p>Construo layouts responsivos e experiências visuais para a web.</p>
-              <span class="stack-status">Conhecimento prático</span>
-            </article>
-            <article class="stack-item">
-              <img class="stack-watermark" src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>JavaScript</h4>
-              <p>Utilizo em projetos web e aplicações interativas.</p>
-              <span class="stack-status">Já utilizado em projetos</span>
-            </article>
-            <article class="stack-item">
-              <img class="stack-watermark" src="https://cdn.simpleicons.org/python/3776AB" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>Python</h4>
-              <p>Conhecimento básico em estudos, automações e manipulação de dados.</p>
-              <span class="stack-status">Conhecimento básico</span>
-            </article>
-            <article class="stack-item">
-              <img class="stack-watermark" src="https://cdn.simpleicons.org/react/61DAFB" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>React</h4>
-              <p>Já utilizado em projetos e estudos.</p>
-              <span class="stack-status">Em aprendizado</span>
-            </article>
-          </div>
-        </article>
-
-        <article class="stack-group reveal">
-          <div class="stack-group-heading">
-            <span class="stack-group-index">02</span>
-            <h3>Ferramentas &amp; versionamento</h3>
-          </div>
-          <div class="stack-items">
-            <article class="stack-item">
-              <img class="stack-watermark" src="https://cdn.simpleicons.org/git/F05032" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>Git</h4>
-              <p>Versionamento e acompanhamento da evolução dos projetos.</p>
-              <span class="stack-status">Conhecimento prático</span>
-            </article>
-            <article class="stack-item">
-              <img class="stack-watermark stack-watermark-github" src="https://cdn.simpleicons.org/github/181717" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>GitHub</h4>
-              <p>Organização, documentação e publicação de repositórios.</p>
-              <span class="stack-status">Uso no processo</span>
-            </article>
-          </div>
-        </article>
-
-        <article class="stack-group reveal">
-          <div class="stack-group-heading">
-            <span class="stack-group-index">03</span>
-            <h3>Integrações &amp; dados</h3>
-          </div>
-          <div class="stack-items">
-            <article class="stack-item">
-              <svg class="stack-watermark stack-watermark-api" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false">
-                <path d="M34 26h-8a14 14 0 0 0 0 28h8m28-28h8a14 14 0 0 1 0 28h-8M34 40h28M48 54v12m-12 0h24" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-                <circle cx="48" cy="22" r="5" fill="currentColor" />
-                <circle cx="36" cy="74" r="5" fill="currentColor" />
-                <circle cx="60" cy="74" r="5" fill="currentColor" />
-              </svg>
-              <h4>APIs</h4>
-              <p>Integração e consumo de serviços externos em projetos.</p>
-              <span class="stack-status">Já utilizado em projetos</span>
-            </article>
-            <article class="stack-item">
-              <img class="stack-watermark stack-watermark-excel" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftexcel.svg" alt="" aria-hidden="true" loading="lazy" decoding="async">
-              <h4>Excel</h4>
-              <p>Conhecimentos básicos para organização e manipulação de dados.</p>
-              <span class="stack-status">Conhecimento básico</span>
-            </article>
-          </div>
-        </article>
-
-        <article class="stack-group stack-group-ai reveal">
-          <div class="stack-group-heading">
-            <span class="stack-group-index">04</span>
-            <h3>IA &amp; produtividade</h3>
-          </div>
-          <div class="stack-items">
-            <article class="stack-item">
-              <h4>IA generativa</h4>
-              <p>Utilizo como apoio ao desenvolvimento, aprendizado, pesquisa e produtividade.</p>
-              <span class="stack-status">Uso no processo</span>
-            </article>
-          </div>
-        </article>
-      </div>
+    <!-- STACK -->
+    <section class="sec" id="stack" data-theme="stack">
+      <p class="label">02 — Stack e ferramentas</p>
+      <h2 class="ttl"><span class="ln"><span>Stack &amp; <span class="acc">ferramentas</span></span></span></h2>
+      <ul class="stack-list">
+        <li><span class="n">01</span><h3>HTML</h3><p>Interfaces e páginas com marcação semântica.</p><span class="st">Conhecimento prático</span></li>
+        <li><span class="n">02</span><h3>CSS</h3><p>Layouts responsivos e experiências visuais.</p><span class="st">Conhecimento prático</span></li>
+        <li><span class="n">03</span><h3>JavaScript</h3><p>Projetos web e aplicações interativas.</p><span class="st">Usado em projetos</span></li>
+        <li><span class="n">04</span><h3>Python</h3><p>Estudos, automações e manipulação de dados.</p><span class="st">Conhecimento básico</span></li>
+        <li><span class="n">05</span><h3>React</h3><p>Projetos e estudos.</p><span class="st">Em aprendizado</span></li>
+        <li><span class="n">06</span><h3>Git &amp; GitHub</h3><p>Versionamento, documentação e publicação de repositórios.</p><span class="st">Conhecimento prático</span></li>
+        <li><span class="n">07</span><h3>APIs</h3><p>Integração e consumo de serviços externos.</p><span class="st">Usado em projetos</span></li>
+        <li><span class="n">08</span><h3>Excel</h3><p>Organização e manipulação de dados.</p><span class="st">Conhecimento básico</span></li>
+        <li><span class="n">09</span><h3>IA generativa</h3><p>Apoio ao desenvolvimento, aprendizado e pesquisa.</p><span class="st">Uso no processo</span></li>
+      </ul>
     </section>
 
-    <!-- ===== FORMAÇÃO ===== -->
-    <section id="formacao" class="section">
-      <div class="section-heading reveal">
-        <h2><span class="heading-mask"><span class="heading-reveal">FORMAÇÃO ACADÊMICA</span></span></h2>
-        <span class="annotation">minha trajetória</span>
-      </div>
-
-      <div class="timeline" id="timeline">
-        <div class="timeline-line"><div class="timeline-fill" id="timelineFill"></div></div>
-
-        <div class="timeline-node reveal">
-          <span class="timeline-dot dot-done"></span>
-          <div class="timeline-content">
-            <div class="timeline-top">
-              <h3>Técnico em Desenvolvimento de Sistemas</h3>
-              <span class="timeline-date">2024 — 2026</span>
-            </div>
-            <p class="timeline-sub">UniCesumar</p>
-          </div>
-        </div>
-
-        <div class="timeline-node reveal">
-          <span class="timeline-dot dot-current"></span>
-          <div class="timeline-content">
-            <div class="timeline-top">
-              <h3>Bacharelado em Engenharia de Software</h3>
-              <span class="timeline-date">Jul/2026 — presente</span>
-            </div>
-            <p class="timeline-sub">Universidade Veiga de Almeida (UVA) · Bolsista ProUni</p>
-          </div>
-        </div>
-
-        <div class="timeline-node timeline-ghost reveal">
-          <span class="timeline-dot dot-ghost"></span>
-          <div class="timeline-content">
-            <div class="timeline-top">
-              <h3>Previsão de conclusão</h3>
-              <span class="timeline-date">2030</span>
-            </div>
-            <p class="timeline-sub">Bacharelado em Engenharia de Software</p>
-          </div>
-        </div>
-      </div>
+    <!-- FORMAÇÃO -->
+    <section class="sec" id="formacao" data-theme="formacao">
+      <p class="label">03 — Formação acadêmica</p>
+      <h2 class="ttl"><span class="ln"><span>Minha <span class="acc">trajetória</span></span></span></h2>
+      <ol class="tl">
+        <span class="tl-fill"></span>
+        <li>
+          <article class="tc">
+            <div class="tc-logo"><img  class="tc-img-logo" src="assets/unicesumar.png" alt="Logo da Unicesumar"></div>
+            <h3>UniCesumar</h3>
+            <p class="tc-role">Técnico em Desenvolvimento de Sistemas</p>
+            <span class="date">2024 — 2026</span>
+            <p class="tc-desc">Concluí o curso Técnico em Desenvolvimento de Sistemas pela UniCesumar, uma formação que me proporcionou amplo aprendizado e crescimento profissional. Ao longo do curso, adquiri uma base sólida em áreas essenciais da tecnologia, incluindo algoritmos e programação estruturada, programação web, programação orientada a objetos, banco de dados, sistemas operacionais e redes de computadores.</p>
+          </article>
+        </li>
+        <li>
+          <article class="tc">
+            <div class="tc-logo"><img class="tc-img-logo" src="assets/uva.png" alt="Logo da Veiga de Almeida"></div>
+            <h3>Universidade Veiga de Almeida</h3>
+            <p class="tc-role">Bacharelado em Engenharia de Software · Bolsista ProUni</p>
+            <span class="date">Jul/2026 — presente</span>
+            <p class="tc-desc">Estudante de Engenharia de Software na Veiga de Almeida, atualmente no primeiro período, cursando disciplinas como Engenharia da Ideia à Concepção e Análise Espacial, desenvolvendo uma base em estruturação de projetos e metodologias ágeis (Scrum).</p>
+          </article>
+        </li>
+        <li class="ghost">
+          <article class="tc">
+            <div class="tc-logo"><img class="tc-img-logo" src="assets/uva.png" alt="Logo da Veiga de Almeida"></div>
+            <h3>Previsão de conclusão</h3>
+            <p class="tc-role">Bacharelado em Engenharia de Software</p>
+            <span class="date">2030</span>
+            <p class="tc-desc">Pendente...</p>
+          </article>
+        </li>
+      </ol>
     </section>
 
-    <!-- ===== PROJETOS ===== -->
-    <section id="projetos" class="section projects-section">
-      <div class="section-heading reveal">
-        <h2><span class="heading-mask"><span class="heading-reveal">PROJETOS</span></span></h2>
-        <span class="annotation">sete lançamentos reais</span>
+    <!-- PROJETOS -->
+    <section class="projects" id="projetos" data-theme="projetos">
+      <div class="projects-head">
+        <p class="label">04 — Projetos</p>
+        <h2 class="ttl"><span class="ln"><span>Projetos <span class="acc">reais</span></span></span></h2>
+        <p class="mono hint">Arraste ou clique em um card para ver os detalhes</p>
       </div>
-
-      <div class="projects-viewport projects-wrapper" id="projectsViewport">
-        <div class="projects-grid projects-track" id="projectsTrack">
-
-          <!-- Card: Duet -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/Duet.png" alt="Tela do Velun Tech" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Duet</h3>
-              <p class="project-desc">
-                Aplicação web criada para ajudar duas pessoas a encontrar filmes, 
-                séries e animações que combinem com os gostos de ambas. 
-                A proposta é tornar a escolha do que assistir mais simples, interativa e divertida, 
-                transformando a indecisão em uma experiência compartilhada.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://duet-phi-mauve.vercel.app/" target="_blank" rel="noopener" class="project-link">
-                Ver site ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: Workzen -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/workzen.png" alt="Tela do Workzen" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Workzen</h3>
-              <p class="project-desc">
-                MVP de SaaS para profissionais que atendem por horário. Centraliza
-                clientes, serviços, agenda e acompanhamento de pagamentos em uma
-                interface web responsiva, com API própria e banco PostgreSQL.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105/workzen" target="_blank" rel="noopener" class="project-link">
-                Ver repositório ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: Redify -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/Redify.png" alt="Tela do Redify" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Redify</h3>
-              <p class="project-desc">
-                Plataforma de correção de redações do ENEM com IA. Avalia as 5
-                competências oficiais, calibrada nos critérios reais de correção,
-                com paywall e pagamento integrado via Mercado Pago.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105/Redify-app" target="_blank" rel="noopener" class="project-link">
-                Ver repositório ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: Velun Tech -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/Velun-tech.png" alt="Tela do Velun Tech" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Velun Tech</h3>
-              <p class="project-desc">
-                Site institucional para uma agência de desenvolvimento web
-                voltada a pequenos negócios, com diagrama animado do processo,
-                comparativo antes/depois e planos de investimento.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://veluntech.netlify.app" target="_blank" rel="noopener" class="project-link">
-                Ver site ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: FP Selection -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/fp-sellection.png" alt="Tela do FP Selection" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>FP Selection</h3>
-              <p class="project-desc">
-                Projeto front-end focado em design, animações e experiência do
-                usuário, desenvolvido a partir de uma ideia de vitrine automotiva
-                e posteriormente aprimorado com identidade visual própria.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://fpselection.netlify.app/" target="_blank" rel="noopener" class="project-link">
-                Ver site ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: Velun AI -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/velun-ai.png" alt="Tela do Velun AI" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Velun AI</h3>
-              <p class="project-desc">
-                Assistente de IA local com memória de conversas via busca
-                semântica (RAG) e leitura de documentos enviados pelo usuário
-                (PDF e Word).
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105/Velun-AI" target="_blank" rel="noopener" class="project-link">
-                Ver repositório ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: Velun ZAP -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/Velun-zap.png" alt="Tela do Velun ZAP" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Velun ZAP</h3>
-              <p class="project-desc">
-                Landing page de um assistente com IA para atendimento
-                automático no WhatsApp, simulando conversas reais de
-                qualificação de clientes para pequenos negócios.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://velunzap.netlify.app" target="_blank" rel="noopener" class="project-link">
-                Ver site ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- Card: Taskflow -->
-          <article class="project-card">
-            <div class="project-card-image">
-              <img src="assets/Taskflow.png" alt="Tela do Taskflow" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Taskflow</h3>
-              <p class="project-desc">
-                Gerenciador de tarefas moderno, com organização por status e
-                acompanhamento de progresso.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://task-flow-six-topaz.vercel.app" target="_blank" rel="noopener" class="project-link">
-                Ver site ↗
-              </a>
-            </div>
-          </article>
-
-          <!-- ===== Cópias para o loop contínuo (não navegáveis, ocultas de leitores de tela) ===== -->
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/workzen.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Workzen</h3>
-              <p class="project-desc">
-                MVP de SaaS para profissionais que atendem por horário. Centraliza
-                clientes, serviços, agenda e acompanhamento de pagamentos em uma
-                interface web responsiva, com API própria e banco PostgreSQL.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105/workzen" tabindex="-1" class="project-link">Ver repositório ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/Redify.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Redify</h3>
-              <p class="project-desc">
-                Plataforma de correção de redações do ENEM com IA. Avalia as 5
-                competências oficiais, calibrada nos critérios reais de correção,
-                com paywall e pagamento integrado via Mercado Pago.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105" tabindex="-1" class="project-link">Ver repositório ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/Velun-tech.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Velun Tech</h3>
-              <p class="project-desc">
-                Site institucional para uma agência de desenvolvimento web
-                voltada a pequenos negócios, com diagrama animado do processo,
-                comparativo antes/depois e planos de investimento.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://veluntech.netlify.app" tabindex="-1" class="project-link">Ver site ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/fp-sellection.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>FP Selection</h3>
-              <p class="project-desc">
-                Projeto front-end focado em design, animações e experiência do
-                usuário, desenvolvido a partir de uma ideia de vitrine automotiva
-                e posteriormente aprimorado com identidade visual própria.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://fpselection.netlify.app/" tabindex="-1" class="project-link">Ver site ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/velun-ai.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Velun AI</h3>
-              <p class="project-desc">
-                Assistente de IA local com memória de conversas via busca
-                semântica (RAG) e leitura de documentos enviados pelo usuário
-                (PDF e Word).
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://github.com/danmachado3105" tabindex="-1" class="project-link">Ver repositório ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/Velun-zap.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Velun ZAP</h3>
-              <p class="project-desc">
-                Landing page de um assistente com IA para atendimento
-                automático no WhatsApp, simulando conversas reais de
-                qualificação de clientes para pequenos negócios.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://velunzap.netlify.app" tabindex="-1" class="project-link">Ver site ↗</a>
-            </div>
-          </article>
-
-          <article class="project-card" aria-hidden="true">
-            <div class="project-card-image">
-              <img src="assets/Taskflow.png" alt="" loading="lazy">
-            </div>
-            <div class="project-card-top">
-              <h3>Taskflow</h3>
-              <p class="project-desc">
-                Gerenciador de tarefas moderno, com organização por status e
-                acompanhamento de progresso.
-              </p>
-            </div>
-            <div class="project-card-bottom">
-              <a href="https://task-flow-six-topaz.vercel.app" tabindex="-1" class="project-link">Ver site ↗</a>
-            </div>
-          </article>
-
-        </div>
+      <div class="p-view" id="pView">
+        <div class="p-track" id="pTrack"></div>
       </div>
-
-      <div class="carousel-controls" aria-label="Navegação dos projetos">
-        <button class="carousel-btn" id="carouselPrev" type="button" aria-label="Projeto anterior">‹</button>
-        <div class="carousel-scrollbar" id="projectsScrollbar" role="scrollbar" aria-label="Posição dos projetos" aria-controls="projectsViewport" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-          <span class="carousel-scrollbar-thumb" id="projectsScrollbarThumb"></span>
-        </div>
-        <div class="carousel-pagination" id="projectsPagination" role="group" aria-label="Escolher projeto"></div>
-        <button class="carousel-btn" id="carouselNext" type="button" aria-label="Próximo projeto">›</button>
-      </div>
-
+      <div class="p-dots" id="pDots" role="group" aria-label="Escolher projeto"></div>
     </section>
 
-    <dialog class="project-dialog" id="projectDialog" aria-label="Visualização do projeto">
-      <button class="project-dialog-close" id="projectDialogClose" type="button" aria-label="Fechar visualização">&times;</button>
-      <img class="project-dialog-image" id="projectDialogImage" alt="">
-    </dialog>
+    <!-- CONTATO -->
+    <section class="sec contact" id="contato" data-theme="contato">
+      <p class="label">05 — Contato</p>
+      <h2 class="ttl big"><span class="ln"><span>Vamos construir <span class="acc">algo juntos?</span></span></span></h2>
+      <p class="hero-sub">Estou aberto a oportunidades de estágio em desenvolvimento de software para aplicar o que sei, resolver problemas e evoluir com projetos reais.</p>
 
-    <!-- ===== CONTATO ===== -->
-    <section id="contato" class="section section-contact">
-      <div class="section-heading reveal">
-        <h2><span class="heading-mask"><span class="heading-reveal">CONTATO</span></span></h2>
-        <span class="annotation">bora conversar</span>
-      </div>
-
-      <p class="contact-lead">
-        Estou aberto a oportunidades de estágio em desenvolvimento de software
-        para aplicar conhecimentos, resolver problemas e evoluir construindo projetos reais.
-      </p>
-
-      <div class="contact-links">
-        <a href="mailto:danilomachado1227@gmail.com" class="contact-link reveal">
-          <span class="contact-left">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <path d="m2 6 10 7 10-7"/>
-              </svg>
+      <div class="contact-grid">
+        <a class="c-card" href="mailto:danilomachado1227@gmail.com">
+          <div class="c-top">
+            <span class="c-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
             </span>
-            <span class="contact-label">Email</span>
-          </span>
-          <span class="contact-right"><span class="contact-value">danilomachado1227@gmail.com</span>
-          <span class="contact-arrow">↗</span></span>
+            <span class="c-arrow">↗</span>
+          </div>
+          <div>
+            <span class="c-label">Email</span>
+            <p class="c-value">danilomachado1227@gmail.com</p>
+          </div>
         </a>
 
-        <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener" class="contact-link reveal">
-          <span class="contact-left">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/>
-              </svg>
+        <a class="c-card" href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener">
+          <div class="c-top">
+            <span class="c-ico">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
             </span>
-            <span class="contact-label">LinkedIn</span>
-          </span>
-          <span class="contact-right"><span class="contact-value">in/danilomachado3105</span>
-          <span class="contact-arrow">↗</span></span>
+            <span class="c-arrow">↗</span>
+          </div>
+          <div>
+            <span class="c-label">LinkedIn</span>
+            <p class="c-value">in/danilomachado3105</p>
+          </div>
         </a>
 
-        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener" class="contact-link reveal">
-          <span class="contact-left">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
-              </svg>
+        <a class="c-card" href="https://github.com/danmachado3105" target="_blank" rel="noopener">
+          <div class="c-top">
+            <span class="c-ico">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/></svg>
             </span>
-            <span class="contact-label">GitHub</span>
-          </span>
-          <span class="contact-right"><span class="contact-value">danmachado3105</span>
-          <span class="contact-arrow">↗</span></span>
+            <span class="c-arrow">↗</span>
+          </div>
+          <div>
+            <span class="c-label">GitHub</span>
+            <p class="c-value">danmachado3105</p>
+          </div>
         </a>
       </div>
     </section>
-
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="footer-logo">DM<span>.</span></span>
-        <div class="footer-meta">
-          <span class="footer-author">Danilo Machado — Desenvolvedor de Software</span>
-          <p class="footer-copyright">© <span id="year"></span> Danilo Machado</p>
-        </div>
+  <footer class="footer">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <a class="ft-logo" href="#top" aria-label="Voltar ao início">DM<span>.</span></a>
+        <p>Danilo Machado<br>Desenvolvedor de Software<br>Rio de Janeiro, BR</p>
       </div>
-      <nav class="footer-links" aria-label="Links de contato">
-        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:danilomachado1227@gmail.com">Email</a>
+      <nav class="ft-col" aria-label="Navegação do rodapé">
+        <h4>Navegação</h4>
+        <a href="#sobre">Sobre</a>
+        <a href="#stack">Stack</a>
+        <a href="#formacao">Formação</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
       </nav>
+      <div class="ft-col">
+        <h4>Conecte-se</h4>
+        <a href="https://github.com/danmachado3105" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/danilomachado3105" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:danilomachado1227@gmail.com">Email ↗</a>
+        <a href="assets/curriculo_danilo_machado.pdf" download>Currículo ↓</a>
+      </div>
+      <a class="ft-up" href="#top" aria-label="Voltar ao topo">↑</a>
+    </div>
+    <div class="ft-bottom">
+      <span>© <span id="year"></span> Danilo Machado</span>
+      <span>Feito com HTML, CSS e JavaScript</span>
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <!-- PAINEL DE DETALHES DO PROJETO -->
+  <div class="pm" id="pm" role="dialog" aria-modal="true" aria-label="Detalhes do projeto" aria-hidden="true" data-lenis-prevent>
+    <button class="pm-close btn ghost btn-sm" id="pmClose" type="button">Fechar ✕</button>
+    <div class="pm-inner" id="pmInner">
+      <div class="pm-gallery">
+        <div class="pm-main"><img id="pmImg" alt=""></div>
+        <div class="pm-thumbs" id="pmThumbs"></div>
+      </div>
+      <div class="pm-info">
+        <span class="pm-n mono" id="pmN"></span>
+        <h3 id="pmTitle"></h3>
+        <div class="tags" id="pmTags"></div>
+        <p class="pm-desc" id="pmDesc"></p>
+        <ul class="pm-list" id="pmList"></ul>
+        <div class="pm-actions">
+          <a class="btn" id="pmLink" href="#" target="_blank" rel="noopener"></a>
+          <button class="btn ghost" id="pmNext" type="button">Próximo projeto →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
