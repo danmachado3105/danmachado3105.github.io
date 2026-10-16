@@ -15,9 +15,9 @@
       hl: ['Encontra filmes, séries e animações que agradam às duas pessoas', 'Torna a escolha do que assistir simples, interativa e divertida', 'Transforma a indecisão em uma experiência compartilhada'],
       l: 'https://duet-phi-mauve.vercel.app/', c: 'Ver site', imgs: ['assets/Duet.png', 'assets/duet2.png', 'assets/duet3.png', 'assets/duet4.png', 'assets/duet5.png', 'assets/duet6.png', 'assets/duet7.png', 'assets/duet8.png'] },
 
-    { t: 'ConectaCDD', tags: ['Aplicação web', 'Interativo'],
-      d: 'Aplicação web criada para ajudar duas pessoas a encontrar filmes, séries e animações que combinem com os gostos de ambas. A proposta é tornar a escolha do que assistir mais simples, interativa e divertida, transformando a indecisão em uma experiência compartilhada.',
-      hl: ['Encontra filmes, séries e animações que agradam às duas pessoas', 'Torna a escolha do que assistir simples, interativa e divertida', 'Transforma a indecisão em uma experiência compartilhada'],
+    { t: 'ConectaCDD', tags: ['Projeto de Faculdade', 'Aplicação Web'],
+      d: 'Plataforma web desenvolvida para aproximar os moradores da Cidade de Deus dos órgãos competentes, permitindo o registro ágil e o acompanhamento transparente de ocorrências de saneamento básico e infraestrutura urbana. O projeto foi estruturado com base nos Objetivos de Desenvolvimento Sustentável (ODS 11) da ONU.',
+      hl: ['Canal direto e intuitivo para reporte de demandas urbanas pelos cidadãos', 'Alinhamento direto com os Objetivos de Desenvolvimento Sustentável (ODS 11 da ONU)', 'Painel de gestão integrado para acompanhamento de chamados e controle de status'],
       l: 'https://conectacdd.vercel.app/', c: 'Ver site', imgs: ['assets/conectacdd.png', 'assets/conectacdd2.png', 'assets/conectacdd3.png', 'assets/conectacdd4.png', 'assets/conectacdd5.png', 'assets/conectacdd6.png', 'assets/conectacdd7.png', 'assets/conectacdd8.png', 'assets/conectacdd9.png'] },
 
     { t: 'Workzen', tags: ['SaaS', 'API própria', 'PostgreSQL'],
