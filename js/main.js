@@ -15,6 +15,11 @@
       hl: ['Encontra filmes, séries e animações que agradam às duas pessoas', 'Torna a escolha do que assistir simples, interativa e divertida', 'Transforma a indecisão em uma experiência compartilhada'],
       l: 'https://duet-phi-mauve.vercel.app/', c: 'Ver site', imgs: ['assets/Duet.png', 'assets/duet2.png', 'assets/duet3.png', 'assets/duet4.png', 'assets/duet5.png', 'assets/duet6.png', 'assets/duet7.png', 'assets/duet8.png'] },
 
+    { t: 'ConectaCDD', tags: ['Aplicação web', 'Interativo'],
+      d: 'Aplicação web criada para ajudar duas pessoas a encontrar filmes, séries e animações que combinem com os gostos de ambas. A proposta é tornar a escolha do que assistir mais simples, interativa e divertida, transformando a indecisão em uma experiência compartilhada.',
+      hl: ['Encontra filmes, séries e animações que agradam às duas pessoas', 'Torna a escolha do que assistir simples, interativa e divertida', 'Transforma a indecisão em uma experiência compartilhada'],
+      l: 'https://conectacdd.vercel.app/', c: 'Ver site', imgs: ['assets/conectacdd.png', 'assets/conectacdd2.png', 'assets/conectacdd3.png', 'assets/conectacdd4.png', 'assets/conectacdd5.png', 'assets/conectacdd6.png', 'assets/conectacdd7.png', 'assets/conectacdd8.png', 'assets/conectacdd9.png'] },
+
     { t: 'Workzen', tags: ['SaaS', 'API própria', 'PostgreSQL'],
       d: 'MVP de SaaS para profissionais que atendem por horário. Centraliza clientes, serviços, agenda e acompanhamento de pagamentos em uma interface web responsiva, com API própria e banco PostgreSQL.',
       hl: ['Centraliza clientes, serviços, agenda e pagamentos', 'Interface web responsiva', 'API própria e banco PostgreSQL'],
@@ -43,12 +48,12 @@
     { t: 'Velun ZAP', tags: ['Landing page', 'IA', 'WhatsApp'],
       d: 'Landing page de um assistente com IA para atendimento automático no WhatsApp, simulando conversas reais de qualificação de clientes para pequenos negócios.',
       hl: ['Atendimento automático no WhatsApp com IA', 'Simula conversas reais de qualificação de clientes', 'Pensado para pequenos negócios'],
-      l: 'https://velunzap.netlify.app', c: 'Ver site', imgs: ['assets/Velun-zap.png'] },
+      l: 'https://velunzap.netlify.app', c: 'Ver site', imgs: ['assets/Velun-zap.png', 'assets/Velun-zap2.png', 'assets/Velun-zap3.png', 'assets/Velun-zap4.png'] },
 
     { t: 'Taskflow', tags: ['Produtividade', 'Status', 'Progresso'],
       d: 'Gerenciador de tarefas moderno, com organização por status e acompanhamento de progresso.',
       hl: ['Organização por status', 'Acompanhamento de progresso', 'Interface moderna'],
-      l: 'https://task-flow-six-topaz.vercel.app', c: 'Ver site', imgs: ['assets/Taskflow.png'] }
+      l: 'https://task-flow-six-topaz.vercel.app', c: 'Ver site', imgs: ['assets/Taskflow.png', 'assets/Taskflow2.png'] }
   ];
   const N = projects.length;
 
