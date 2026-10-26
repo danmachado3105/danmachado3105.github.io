@@ -14,6 +14,12 @@
     --ac: #ff6b3d;
     --ac2: #ffb86b;
     --on: #140f0c;
+    --hero-bg: #0e0b0a;
+    --hero-brown: #ab622b;
+    --hero-brown-hover: #ab622b;
+    --hero-brown-border: #ab622b;
+    --hero-muted: #b8b0a6;
+    --hero-glow: rgba(139, 94, 60, .25);
     --f1: 'Bricolage Grotesque', system-ui, sans-serif;
     --f2: 'DM Sans', system-ui, sans-serif;
     --f3: 'DM Mono', ui-monospace, monospace
@@ -318,7 +324,8 @@ button {
     justify-content: space-between;
     gap: 2rem;
     padding: 7.5rem 4vw 2.5rem;
-    overflow: hidden
+    overflow: hidden;
+    background: var(--hero-bg)
 }
 
 .hero>*:not(.blob) {
@@ -339,7 +346,7 @@ button {
     height: 44vw;
     top: -14%;
     left: -12%;
-    background: var(--ac)
+    display: none
 }
 
 .b2 {
@@ -347,7 +354,7 @@ button {
     height: 38vw;
     right: -8%;
     bottom: -16%;
-    background: var(--ac2)
+    display: none
 }
 
 .b3 {
@@ -355,7 +362,8 @@ button {
     height: 22vw;
     left: 46%;
     top: 30%;
-    background: #ff4f7b
+    background: var(--hero-glow);
+    opacity: 1
 }
 
 .hero-top {
@@ -398,8 +406,8 @@ button {
 }
 
 .hero-title:hover .l2>span {
-    color: var(--ac);
-    -webkit-text-stroke-color: var(--ac)
+    color: var(--hero-brown);
+    -webkit-text-stroke-color: var(--hero-brown)
 }
 
 .hero-visual {
@@ -414,17 +422,19 @@ button {
 
 .hero-photo {
     position: relative;
-    background: var(--fg);
-    padding: .6rem .6rem 2.6rem;
-    border-radius: 18px;
-    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .7)
+    overflow: hidden;
+    background: color-mix(in srgb, var(--hero-bg) 82%, var(--hero-brown-border));
+    padding: .4rem;
+    border: 1px solid color-mix(in srgb, var(--hero-brown-border) 70%, transparent);
+    border-radius: 28px 28px 28px 28px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .7), 0 0 24px color-mix(in srgb, var(--hero-brown-border) 18%, transparent)
 }
 
 .hero-photo img {
     width: 100%;
     aspect-ratio: 4/5;
     object-fit: cover;
-    border-radius: 10px
+    border-radius: 22px 22px 22px 22px
 }
 
 .hero-photo figcaption {
@@ -441,13 +451,14 @@ button {
 
 .badge {
     position: absolute;
-    left: -3.4rem;
-    bottom: -2.6rem;
-    width: 112px;
-    height: 112px;
+    right: -1.5rem;
+    bottom: -1.2rem;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    background: var(--ac);
-    color: var(--on);
+    border: 1px solid color-mix(in srgb, var(--hero-brown) 72%, transparent);
+    background: var(--hero-bg);
+    color: var(--hero-brown-hover);
     display: grid;
     place-items: center
 }
@@ -486,7 +497,7 @@ button {
 
 .hero-sub {
     max-width: 46ch;
-    color: var(--mut);
+    color: var(--hero-muted);
     font-size: 1.1rem;
     margin-bottom: 1.6rem
 }
@@ -507,18 +518,18 @@ button {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #5cff8a;
+    background: var(--hero-brown-hover);
     animation: pulse 2s infinite
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(92, 255, 138, .6)
+        box-shadow: 0 0 0 0 color-mix(in srgb, var(--hero-brown-hover) 60%, transparent)
     }
 
     70%,
     100% {
-        box-shadow: 0 0 0 12px rgba(92, 255, 138, 0)
+        box-shadow: 0 0 0 12px color-mix(in srgb, var(--hero-brown-hover) 0%, transparent)
     }
 }
 
@@ -1396,7 +1407,8 @@ button {
     }
 
     .badge {
-        left: -1.5rem;
+        left: auto;
+        right: -1.5rem;
         width: 92px;
         height: 92px
     }
