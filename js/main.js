@@ -246,7 +246,7 @@
 
   /* ============ Cores que mudam por seção ============ */
   const themes = {
-    hero:     { bg: '#100d0b', fg: '#f5efe6', mut: '#a8a097', line: '#2c2724', ac: '#ff6b3d', ac2: '#ffb86b', on: '#140f0c' },
+    hero:     { fg: '#f5efe6', line: '#2c2724', on: '#140f0c' },
     sobre:    { bg: '#efe8dc', fg: '#1a1512', mut: '#6b6258', line: '#d5ccbd', ac: '#e8452c', ac2: '#ff9a62', on: '#fff6ea' },
     stack:    { bg: '#0f1a14', fg: '#eaf3e6', mut: '#8fa597', line: '#25382c', ac: '#c8f560', ac2: '#7be0a8', on: '#0f1a14' },
     formacao: { bg: '#f4dfe3', fg: '#2a1219', mut: '#7a5560', line: '#e2c3cb', ac: '#e0306a', ac2: '#ff8aa8', on: '#fff0f3' },
@@ -254,7 +254,14 @@
     contato:  { bg: '#0e4a47', fg: '#effff6', mut: '#9fd3c4', line: '#1f6560', ac: '#ffdf6b', ac2: '#9bf2d0', on: '#0b2f2d' }
   };
   const setTheme = (key) => {
-    const vars = Object.fromEntries(Object.entries(themes[key]).map(([k, v]) => ['--' + k, v]));
+    const heroTheme = key === 'hero' ? {
+      ...themes.hero,
+      bg: getComputedStyle(html).getPropertyValue('--hero-bg').trim(),
+      mut: getComputedStyle(html).getPropertyValue('--hero-muted').trim(),
+      ac: getComputedStyle(html).getPropertyValue('--hero-brown').trim(),
+      ac2: getComputedStyle(html).getPropertyValue('--hero-brown-hover').trim()
+    } : themes[key];
+    const vars = Object.fromEntries(Object.entries(heroTheme).map(([k, v]) => ['--' + k, v]));
     gsap.to(html, { ...vars, duration: 0.9, ease: 'power2.out', overwrite: 'auto' });
   };
 
