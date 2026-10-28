@@ -145,7 +145,8 @@ button {
 
 .logo,
 .nav,
-.menu-btn {
+.menu-btn,
+.hd-cv {
     background: color-mix(in srgb, var(--bg) 55%, transparent);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -160,6 +161,32 @@ button {
 }
 
 .logo span {
+    color: var(--ac)
+}
+
+.hd-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .65rem 1.1rem;
+    border-radius: 99px;
+    color: var(--mut);
+    font: 500 .85rem var(--f2);
+    transition: color .3s, border-color .3s, background .3s
+}
+
+.hd-cv span {
+    color: var(--ac);
+    transition: color .3s
+}
+
+.hd-cv:hover {
+    color: var(--bg);
+    background: var(--fg);
+    border-color: var(--fg)
+}
+
+.hd-cv:hover span {
     color: var(--ac)
 }
 
@@ -240,6 +267,17 @@ button {
 
 .mobile-menu a:active {
     color: var(--ac)
+}
+
+.mobile-menu a.mobile-cv {
+    width: fit-content;
+    margin-top: 1.1rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--line);
+    color: var(--ac);
+    font: 500 .85rem var(--f3);
+    letter-spacing: .12em;
+    text-transform: uppercase
 }
 
 /* botões */
@@ -600,7 +638,6 @@ button {
 }
 
 .about-text p:first-child {
-    color: var(--fg);
     font-size: 1.3rem
 }
 
@@ -756,14 +793,16 @@ button {
     border-color: var(--ac)
 }
 
+.tl li:not(.ghost) .tc { cursor: pointer }
+.tl li:not(.ghost) .tc:focus-visible { outline: 2px solid var(--ac); outline-offset: 4px }
+
 .tc-logo {
     width: 54px;
     height: 54px;
     border-radius: 14px;
     display: grid;
     place-items: center;
-    border: 1px solid var(--line);
-    background: color-mix(in srgb, var(--fg) 8%, transparent);
+    overflow: hidden;
     font: 500 .8rem var(--f3);
     letter-spacing: .04em;
     color: var(--ac);
@@ -771,7 +810,10 @@ button {
 }
 
 .tc-img-logo {
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
 }
 
 .tc h3 {
@@ -797,6 +839,78 @@ button {
     margin-top: 1rem;
     font-size: .98rem
 }
+
+.tc-desc {
+    min-height: 4.2em
+}
+
+.tc-more {
+    margin-top: .8rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ac);
+    font: 600 .88rem var(--f2);
+    cursor: pointer
+}
+
+.tc-more:hover { color: var(--fg) }
+.tc-more span { margin-left: .25rem }
+
+.edu-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 160;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1.5rem 2rem;
+    overflow-y: auto;
+    background: color-mix(in srgb, var(--bg) 42%, transparent);
+    backdrop-filter: blur(18px);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+    will-change: clip-path
+}
+
+.edu-modal.open { visibility: visible; opacity: 1; pointer-events: auto }
+
+.edu-close {
+    position: fixed;
+    top: 1.2rem;
+    right: 4vw;
+    z-index: 1
+}
+
+.edu-panel {
+    width: min(100%, 740px);
+    flex: none;
+    margin-block: auto;
+    padding: clamp(1.4rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    background: var(--bg);
+    box-shadow: 0 24px 80px color-mix(in srgb, var(--on) 18%, transparent)
+}
+
+.edu-heading { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem }
+.edu-heading img { width: 62px; height: 62px; object-fit: cover; border: 0; border-radius: 16px; padding: 0 }
+.edu-status { color: var(--ac); font-size: .72rem; text-transform: uppercase; letter-spacing: .1em }
+.edu-school { color: var(--mut); margin-top: .25rem }
+.edu-panel h2 { font: 800 clamp(1.8rem, 4vw, 3.2rem)/1.05 var(--f1); letter-spacing: -.05em }
+.edu-period { color: var(--ac); margin-top: .55rem; font-size: .75rem }
+.edu-section-title { font: 700 .78rem var(--f3); letter-spacing: .1em; text-transform: uppercase; color: var(--mut); margin-top: 1.5rem }
+.edu-full-desc { color: var(--fg); font-size: .98rem; line-height: 1.7; margin: .45rem 0 1.5rem }
+.edu-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding-top: 1.2rem; border-top: 1px solid var(--line) }
+.edu-panel h3 { font: 700 1.1rem var(--f1); margin-bottom: .8rem }
+.edu-skills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none }
+.edu-skills li { padding: .38rem .72rem; border: 1px solid var(--line); border-radius: 99px; color: var(--mut); font-size: .8rem }
+.edu-subjects { list-style: none; display: grid; gap: .55rem }
+.edu-subjects li { position: relative; padding-left: 1rem; color: var(--mut); font-size: .88rem; line-height: 1.45 }
+.edu-subjects li::before { content: ""; position: absolute; left: 0; top: .55em; width: .35rem; height: .35rem; border-radius: 50%; background: var(--ac) }
 
 /* projetos: carrossel em loop */
 .projects {
@@ -1335,24 +1449,120 @@ button {
 }
 
 /* responsivo */
+@media (min-width:901px) {
+    .hero-copy {
+        display: block;
+        height: 3.36rem;
+        visibility: hidden
+    }
+
+    .hero-sub {
+        height: 1.76rem;
+        font-size: 0;
+        line-height: 1.76rem
+    }
+
+    .hero-cta {
+        display: none
+    }
+}
+
 @media (max-width:900px) {
-    .hero-title .l2 {
-        padding-left: 6vw
+    .header {
+        top: max(.75rem, env(safe-area-inset-top));
+        padding-inline: 5vw
+    }
+
+    .logo,
+    .menu-btn {
+        min-height: 44px;
+        align-items: center;
+        justify-content: center
+    }
+
+    .logo {
+        display: inline-flex
+    }
+
+    .nav,
+    .hd-cv {
+        display: none
+    }
+
+    .menu-btn {
+        display: inline-flex
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 6.5rem 5vw 2rem;
+        gap: 1rem
     }
 
     .hero-stage {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 2.5rem
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) clamp(190px, 28vw, 255px);
+        align-items: center;
+        gap: clamp(1rem, 3vw, 2rem);
+        min-height: 0
+    }
+
+    .hero-title {
+        min-width: 0;
+        font-size: clamp(3.5rem, 8.5vw, 6rem)
+    }
+
+    .hero-title .l2 {
+        padding-left: 4vw
+    }
+
+    .hero-title .l2>span {
+        -webkit-text-stroke-width: 1.5px
     }
 
     .hero-visual {
         position: relative;
         inset: auto;
-        margin: 0 0 2.5rem auto;
-        width: 56vw;
-        max-width: 260px
+        width: 100%;
+        max-width: 255px;
+        margin: 0;
+        justify-self: end
+    }
+
+    .hero-photo {
+        padding: .3rem;
+        border-radius: 22px
+    }
+
+    .hero-photo img {
+        border-radius: 17px
+    }
+
+    .badge {
+        width: 78px;
+        height: 78px;
+        right: -1rem;
+        bottom: -.8rem
+    }
+
+    .hero-copy {
+        display: block;
+        max-width: 46ch
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+        margin-bottom: 1rem
+    }
+
+    .hero-cta .btn {
+        padding: .75rem 1.25rem;
+        font-size: .88rem
+    }
+
+    .hero-bottom {
+        align-items: flex-end;
+        gap: 1.5rem
     }
 
     .about-grid {
@@ -1397,20 +1607,273 @@ button {
 
 @media (max-width:767px) {
 
-    .nav,
-    .hd-cv {
-        display: none
+    .hero {
+        min-height: 100svh;
+        padding: 6rem 6vw 1.5rem;
+        gap: .5rem
     }
 
-    .menu-btn {
-        display: block
+    .hero-stage {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1rem;
+        padding: .75rem 0 1rem
+    }
+
+    .hero-title {
+        width: 100%;
+        font-size: clamp(3.3rem, 15.8vw, 4.8rem);
+        line-height: .9
+    }
+
+    .hero-title .l2 {
+        padding-left: 5vw
+    }
+
+    .hero-title .l2>span {
+        -webkit-text-stroke-width: 1.25px
+    }
+
+    .hero-visual {
+        width: clamp(125px, 42vw, 175px);
+        max-width: none;
+        margin: 0 12vw 0 auto;
+        align-self: flex-end
     }
 
     .badge {
-        left: auto;
-        right: -1.5rem;
-        width: 92px;
-        height: 92px
+        width: 68px;
+        height: 68px;
+        right: -.8rem;
+        bottom: -.65rem
+    }
+
+    .badge span {
+        font-size: 1.3rem
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem
+    }
+
+    .hero-copy {
+        max-width: none
+    }
+
+    .hero-sub {
+        max-width: 40ch;
+        font-size: .94rem;
+        line-height: 1.55;
+        margin-bottom: .85rem
+    }
+
+    .hero-cta .btn {
+        padding: .7rem 1.1rem;
+        font-size: .84rem
+    }
+
+    .status {
+        width: 100%;
+        padding-top: .8rem;
+        border-top: 1px solid color-mix(in srgb, var(--hero-muted) 22%, transparent);
+        font-size: .72rem
+    }
+
+    .b3 {
+        width: 65vw;
+        height: 65vw;
+        left: 28%;
+        top: 34%;
+        filter: blur(70px)
+    }
+
+    .sec {
+        padding: 6.5rem 6vw
+    }
+
+    .label {
+        margin-bottom: 1.4rem;
+        font-size: .68rem;
+        letter-spacing: .13em
+    }
+
+    .ttl,
+    .ttl.big {
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 3.5rem);
+        line-height: 1;
+        white-space: normal
+    }
+
+    .statement {
+        margin-top: 2.4rem;
+        font-size: clamp(1.65rem, 7.5vw, 2.5rem)
+    }
+
+    .about-grid {
+        gap: 1.75rem;
+        margin-top: 3rem
+    }
+
+    .ph {
+        width: min(100%, 290px);
+        margin-inline: auto;
+        border-radius: 20px
+    }
+
+    .about-text p,
+    .about-text p:first-child {
+        font-size: 1rem;
+        line-height: 1.7
+    }
+
+    .stack-list {
+        margin-top: 2.75rem
+    }
+
+    .stack-list li {
+        grid-template-columns: 2rem minmax(0, 1fr);
+        gap: .4rem .8rem;
+        padding: 1.25rem .35rem
+    }
+
+    .stack-list h3 {
+        font-size: clamp(1.45rem, 7vw, 2rem)
+    }
+
+    .stack-list p {
+        font-size: .88rem
+    }
+
+    .stack-list .st {
+        white-space: normal;
+        padding: .25rem .6rem;
+        font-size: .62rem
+    }
+
+    .tl {
+        margin-top: 3rem
+    }
+
+    .tc {
+        padding: 1.25rem;
+        border-radius: 20px
+    }
+
+    .tc h3 {
+        font-size: 1.55rem
+    }
+
+    .projects {
+        padding: 6.5rem 0 5rem
+    }
+
+    .projects-head {
+        padding: 0 6vw 1.75rem
+    }
+
+    .hint {
+        font-size: .72rem
+    }
+
+    .p-view {
+        padding: 1rem 0 2rem
+    }
+
+    .p-track {
+        gap: 1rem
+    }
+
+    .card {
+        width: min(84vw, 380px);
+        padding: .45rem;
+        border-radius: 24px
+    }
+
+    .card-img {
+        height: clamp(190px, 55vw, 240px);
+        border-radius: 18px
+    }
+
+    .card-body {
+        padding: 1rem .75rem .75rem
+    }
+
+    .card h3 {
+        font-size: 2rem
+    }
+
+    .contact {
+        min-height: 0
+    }
+
+    .contact-grid {
+        gap: .75rem;
+        margin-top: 2.25rem
+    }
+
+    .c-card {
+        gap: 1.75rem;
+        padding: 1.2rem;
+        border-radius: 20px
+    }
+
+    .c-value {
+        font-size: 1.05rem;
+        overflow-wrap: anywhere
+    }
+
+    .footer {
+        padding: 3.25rem 6vw 1.5rem
+    }
+
+    .ft-top {
+        grid-template-columns: 1fr;
+        gap: 1.75rem
+    }
+
+    .ft-brand {
+        grid-column: auto
+    }
+
+    .ft-logo {
+        font-size: 3rem
+    }
+
+    .ft-bottom {
+        flex-direction: column;
+        margin-top: 2.25rem;
+        font-size: .65rem
+    }
+
+    .pm-inner {
+        gap: 1.5rem;
+        padding: 5rem 5vw 2rem
+    }
+
+    .pm-main {
+        border-radius: 18px
+    }
+
+    .pm-close,
+    .edu-close {
+        top: .8rem;
+        right: 5vw
+    }
+
+    .edu-content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem
+    }
+
+    .edu-panel {
+        width: 100%
     }
 
     .tl::before,

@@ -10,47 +10,47 @@
 
   /* ============ PROJETOS (edite aqui: para mais fotos, adicione caminhos em imgs) ============ */
   const projects = [
-    { t: 'Duet', tags: ['Aplicação web', 'Interativo'],
+    { t: 'Duet', tags: ['React', 'Vite', 'JavaScript', "API TMDB"],
       d: 'Aplicação web criada para ajudar duas pessoas a encontrar filmes, séries e animações que combinem com os gostos de ambas. A proposta é tornar a escolha do que assistir mais simples, interativa e divertida, transformando a indecisão em uma experiência compartilhada.',
       hl: ['Encontra filmes, séries e animações que agradam às duas pessoas', 'Torna a escolha do que assistir simples, interativa e divertida', 'Transforma a indecisão em uma experiência compartilhada'],
       l: 'https://duet-phi-mauve.vercel.app/', c: 'Ver site', imgs: ['assets/Duet.png', 'assets/duet2.png', 'assets/duet3.png', 'assets/duet4.png', 'assets/duet5.png', 'assets/duet6.png', 'assets/duet7.png', 'assets/duet8.png'] },
 
-    { t: 'ConectaCDD', tags: ['Projeto de Faculdade', 'Aplicação Web'],
+    { t: 'ConectaCDD', tags: ['Javascript', 'CSS', 'HTML'],
       d: 'Plataforma web desenvolvida para aproximar os moradores da Cidade de Deus dos órgãos competentes, permitindo o registro ágil e o acompanhamento transparente de ocorrências de saneamento básico e infraestrutura urbana. O projeto foi estruturado com base nos Objetivos de Desenvolvimento Sustentável (ODS 11) da ONU.',
       hl: ['Canal direto e intuitivo para reporte de demandas urbanas pelos cidadãos', 'Alinhamento direto com os Objetivos de Desenvolvimento Sustentável (ODS 11 da ONU)', 'Painel de gestão integrado para acompanhamento de chamados e controle de status'],
       l: 'https://conectacdd.vercel.app/', c: 'Ver site', imgs: ['assets/conectacdd.png', 'assets/conectacdd2.png', 'assets/conectacdd3.png', 'assets/conectacdd4.png', 'assets/conectacdd5.png', 'assets/conectacdd6.png', 'assets/conectacdd7.png', 'assets/conectacdd8.png', 'assets/conectacdd9.png'] },
 
-    { t: 'Workzen', tags: ['SaaS', 'API própria', 'PostgreSQL'],
+    { t: 'Workzen', tags: ['React', 'TypeScript', 'Python', 'PostgreSQL'],
       d: 'MVP de SaaS para profissionais que atendem por horário. Centraliza clientes, serviços, agenda e acompanhamento de pagamentos em uma interface web responsiva, com API própria e banco PostgreSQL.',
       hl: ['Centraliza clientes, serviços, agenda e pagamentos', 'Interface web responsiva', 'API própria e banco PostgreSQL'],
       l: 'https://github.com/danmachado3105/workzen', c: 'Ver repositório', imgs: ['assets/workzen.png', 'assets/workzen2.png', 'assets/workzen3.png', 'assets/workzen4.png', 'assets/workzen5.png', 'assets/workzen6.png'] },
 
-    { t: 'Redify', tags: ['IA', 'ENEM', 'Mercado Pago'],
+    { t: 'Redify', tags: ['Python-FastAPI', 'JavaScript', 'Anthropic Api'],
       d: 'Plataforma de correção de redações do ENEM com IA. Avalia as 5 competências oficiais, calibrada nos critérios reais de correção, com paywall e pagamento integrado via Mercado Pago.',
       hl: ['Avalia as 5 competências oficiais do ENEM', 'Calibrada nos critérios reais de correção', 'Paywall com pagamento integrado via Mercado Pago'],
       l: 'https://github.com/danmachado3105/Redify-app', c: 'Ver repositório', imgs: ['assets/Redify.png', 'assets/Redify2.png', 'assets/Redify3.png', 'assets/Redify4.png', 'assets/Redify5.png'] },
 
-    { t: 'Velun Tech', tags: ['Site institucional', 'Animações'],
+    { t: 'Velun Tech', tags: ['JavaScript', 'CSS', 'HTML'],
       d: 'Site institucional para uma agência de desenvolvimento web voltada a pequenos negócios, com diagrama animado do processo, comparativo antes/depois e planos de investimento.',
       hl: ['Diagrama animado do processo', 'Comparativo antes/depois', 'Planos de investimento'],
       l: 'https://veluntech.netlify.app', c: 'Ver site', imgs: ['assets/Velun-tech.png', 'assets/Velun-tech2.png', 'assets/Velun-tech3.png', 'assets/Velun-tech4.png', 'assets/Velun-tech5.png', 'assets/Velun-tech6.png', 'assets/Velun-tech7.png', 'assets/Velun-tech8.png'] },
 
-    { t: 'FP Selection', tags: ['Front-end', 'Design', 'Animações'],
+    { t: 'FP Selection', tags: ['Javascript', 'CSS', 'HTML'],
       d: 'Projeto front-end focado em design, animações e experiência do usuário, desenvolvido a partir de uma ideia de vitrine automotiva e posteriormente aprimorado com identidade visual própria.',
       hl: ['Foco em design, animações e experiência do usuário', 'Nasceu de uma ideia de vitrine automotiva', 'Aprimorado com identidade visual própria'],
       l: 'https://fpselection.netlify.app/', c: 'Ver site', imgs: ['assets/fp-sellection.png', 'assets/fp-sellection2.png', 'assets/fp-sellection3.png'] },
 
-    { t: 'Velun AI', tags: ['IA local', 'RAG', 'PDF e Word'],
+    { t: 'Velun AI', tags: ['React', 'TypeScript', 'SQLAlchemy', 'Ollama'],
       d: 'Assistente de IA local com memória de conversas via busca semântica (RAG) e leitura de documentos enviados pelo usuário (PDF e Word).',
       hl: ['Memória de conversas via busca semântica (RAG)', 'Leitura de documentos enviados (PDF e Word)', 'Assistente de IA local'],
       l: 'https://github.com/danmachado3105/Velun-AI', c: 'Ver repositório', imgs: ['assets/velun-ai.png', 'assets/venulai-conversa.png', 'assets/velunai-branco.png', 'assets/velunai-conversa-br.png'] },
 
-    { t: 'Velun ZAP', tags: ['Landing page', 'IA', 'WhatsApp'],
+    { t: 'Velun ZAP', tags: ['JavaScript', 'CSS', 'HTML'],
       d: 'Landing page de um assistente com IA para atendimento automático no WhatsApp, simulando conversas reais de qualificação de clientes para pequenos negócios.',
       hl: ['Atendimento automático no WhatsApp com IA', 'Simula conversas reais de qualificação de clientes', 'Pensado para pequenos negócios'],
       l: 'https://velunzap.netlify.app', c: 'Ver site', imgs: ['assets/Velun-zap.png', 'assets/Velun-zap2.png', 'assets/Velun-zap3.png', 'assets/Velun-zap4.png'] },
 
-    { t: 'Taskflow', tags: ['Produtividade', 'Status', 'Progresso'],
+    { t: 'Taskflow', tags: ['Javascript', 'CSS', 'HTML'],
       d: 'Gerenciador de tarefas moderno, com organização por status e acompanhamento de progresso.',
       hl: ['Organização por status', 'Acompanhamento de progresso', 'Interface moderna'],
       l: 'https://task-flow-six-topaz.vercel.app', c: 'Ver site', imgs: ['assets/Taskflow.png', 'assets/Taskflow2.png'] }
@@ -195,6 +195,92 @@
     if (b && goToCard) goToCard(+b.dataset.i);
   });
 
+  /* ============ Detalhes da formação ============ */
+  const eduModal = $('#eduModal'), eduClose = $('#eduClose');
+  $$('.tl li:not(.ghost) .tc-desc').forEach((desc) => {
+    desc.dataset.fullText = desc.textContent.trim();
+    const limit = 165;
+    if (desc.dataset.fullText.length > limit) desc.textContent = `${desc.dataset.fullText.slice(0, limit).trimEnd()}...`;
+  });
+  const eduDetails = [
+    {
+      status: 'Concluído',
+      skills: ['Lógica e algoritmos', 'Programação estruturada', 'Desenvolvimento web', 'Programação orientada a objetos', 'Modelagem de dados', 'Fundamentos de sistemas e redes'],
+      subjects: ['Algoritmos e programação estruturada', 'Programação web', 'Programação orientada a objetos', 'Banco de dados', 'Sistemas operacionais', 'Redes de computadores']
+    },
+    {
+      status: 'Em andamento · 1º período',
+      skills: ['Estruturação de projetos', 'Metodologias ágeis (Scrum)', 'Fundamentos de programação com C', 'Cálculo de uma variável'],
+      subjects: ['Engenharia da Ideia à Concepção', 'Análise Espacial', 'Base de Programação', 'Cálculo de uma variável']
+    }
+  ];
+  let eduTrigger = null, eduAnimatingClose = false;
+  function openEducation(button) {
+    const card = button.closest('.tc'), index = [...card.closest('.tl').querySelectorAll('.tc')].indexOf(card);
+    const details = eduDetails[index];
+    if (!details) return;
+    eduTrigger = button;
+    eduAnimatingClose = false;
+    $('#eduLogo').src = card.querySelector('.tc-img-logo').src;
+    $('#eduLogo').alt = card.querySelector('.tc-img-logo').alt;
+    $('#eduStatus').textContent = details.status;
+    $('#eduSchool').textContent = card.querySelector('h3').textContent;
+    $('#eduTitle').textContent = card.querySelector('.tc-role').textContent.replace(/\s*·\s*Bolsista ProUni/i, '');
+    $('#eduPeriod').textContent = card.querySelector('.date').textContent;
+    $('#eduDesc').textContent = card.querySelector('.tc-desc').dataset.fullText;
+    $('#eduSkills').innerHTML = details.skills.map((skill) => `<li>${skill}</li>`).join('');
+    $('#eduSubjects').innerHTML = details.subjects.map((subject) => `<li>${subject}</li>`).join('');
+    eduModal.classList.add('open');
+    eduModal.setAttribute('aria-hidden', 'false');
+    html.classList.add('no-scroll');
+    lenis && lenis.stop();
+    if (hasGsap && !reduce) {
+      const r = card.getBoundingClientRect();
+      const from = `inset(${r.top}px ${innerWidth - r.right}px ${innerHeight - r.bottom}px ${r.left}px round 24px)`;
+      gsap.killTweensOf(eduModal);
+      gsap.set(eduModal, { opacity: 1 });
+      gsap.fromTo(eduModal, { clipPath: from }, { clipPath: 'inset(0px 0px 0px 0px round 0px)', duration: 0.9, ease: 'power4.inOut' });
+    }
+    eduClose.focus({ preventScroll: true });
+  }
+  function closeEducation() {
+    if (!eduModal.classList.contains('open') || eduAnimatingClose) return;
+    eduAnimatingClose = true;
+    const finishClose = () => {
+      eduModal.classList.remove('open');
+      eduModal.setAttribute('aria-hidden', 'true');
+      hasGsap && gsap.set(eduModal, { clearProps: 'clipPath,opacity' });
+      html.classList.remove('no-scroll');
+      lenis && lenis.start();
+      eduTrigger && eduTrigger.focus({ preventScroll: true });
+      eduAnimatingClose = false;
+    };
+    if (!hasGsap || reduce) return finishClose();
+    gsap.killTweensOf(eduModal);
+    const r = eduTrigger.getBoundingClientRect();
+    const visible = r.width > 0 && r.right > 0 && r.left < innerWidth && r.bottom > 0 && r.top < innerHeight;
+    if (!visible) return gsap.to(eduModal, { opacity: 0, duration: 0.35, onComplete: finishClose });
+    const to = `inset(${r.top}px ${innerWidth - r.right}px ${innerHeight - r.bottom}px ${r.left}px round 24px)`;
+    gsap.to(eduModal, { clipPath: to, duration: 0.7, ease: 'power4.inOut', onComplete: finishClose });
+  }
+  $$('.tl li:not(.ghost) .tc').slice(0, 2).forEach((card) => {
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-haspopup', 'dialog');
+    card.setAttribute('aria-label', `Ler mais sobre ${card.querySelector('.tc-role').textContent}`);
+    card.addEventListener('click', (e) => {
+      if (!e.target.closest('a, button')) openEducation(card);
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.target !== card || (e.key !== 'Enter' && e.key !== ' ')) return;
+      e.preventDefault();
+      openEducation(card);
+    });
+  });
+  eduClose.addEventListener('click', closeEducation);
+  eduModal.addEventListener('click', (e) => { if (e.target === eduModal) closeEducation(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeEducation(); });
+
   /* ============ Menu mobile ============ */
   const menu = $('#mobileMenu'), menuBtn = $('#menuBtn');
   function closeMenu() {
@@ -336,6 +422,10 @@
   });
 
   $$('.ttl').forEach((h) => gsap.from($$('.ln > *', h), { yPercent: 110, duration: 1.1, stagger: 0.1, ease: 'power4.out', scrollTrigger: { trigger: h, start: 'top 88%' } }));
+  $$('.about-text p').forEach((p) => gsap.fromTo(p, { color: '#77716a' }, {
+    color: '#000000', ease: 'none',
+    scrollTrigger: { trigger: p, start: 'top 82%', end: 'top 48%', scrub: true }
+  }));
   $$('.label, .hint, .about-text p, .stack-list li, .contact .hero-sub, .c-card').forEach((el) =>
     gsap.from(el, { y: 50, opacity: 0, duration: 1, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: el, start: 'top 90%' } }));
 
@@ -362,7 +452,7 @@
     track.append(k);
   });
 
-  const SPEED = 42; // px por segundo
+  const SPEED = 52; // px por segundo
   let offset = 0, step = 0, loopW = 0, cardW = 0;
   let hold = false, hover = false, down = false, dragging = false, suppress = false, inView = true, activeIdx = -1;
   let tw = null;
