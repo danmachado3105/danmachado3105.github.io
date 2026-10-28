@@ -583,7 +583,8 @@ button {
 .marquee {
     overflow: hidden;
     border-block: 1px solid var(--line);
-    padding: 1.1rem 0
+    padding: 1.1rem 0;
+    background: var(--hero-bg)
 }
 
 .marquee-track {
@@ -916,9 +917,9 @@ button {
 .edu-panel h3 { font: 700 1.1rem var(--f1); margin-bottom: .8rem }
 .edu-skills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none }
 .edu-skills li { padding: .38rem .72rem; border: 1px solid var(--line); border-radius: 99px; color: var(--mut); font-size: .8rem }
-.edu-subjects { list-style: none; display: grid; gap: .55rem }
-.edu-subjects li { position: relative; padding-left: 1rem; color: var(--mut); font-size: .88rem; line-height: 1.45 }
-.edu-subjects li::before { content: ""; position: absolute; left: 0; top: .55em; width: .35rem; height: .35rem; border-radius: 50%; background: var(--ac) }
+.edu-subjects { list-style: none }
+.edu-subjects li { display: flex; gap: .8rem; padding: .85rem 0; border-top: 1px solid var(--line); color: var(--mut); font-size: .88rem; line-height: 1.45 }
+.edu-subjects li::before { content: "✺"; color: var(--ac) }
 
 /* projetos: carrossel em loop */
 .projects {
