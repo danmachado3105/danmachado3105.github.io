@@ -342,12 +342,14 @@
   const setTheme = (key) => {
     const heroTheme = key === 'hero' ? {
       ...themes.hero,
-      bg: getComputedStyle(html).getPropertyValue('--hero-bg').trim(),
+      bg: '#0e0b0a',
       mut: getComputedStyle(html).getPropertyValue('--hero-muted').trim(),
       ac: getComputedStyle(html).getPropertyValue('--hero-brown').trim(),
       ac2: getComputedStyle(html).getPropertyValue('--hero-brown-hover').trim()
     } : themes[key];
     const vars = Object.fromEntries(Object.entries(heroTheme).map(([k, v]) => ['--' + k, v]));
+    if (key === 'sobre') vars['--hero-bg'] = themes.sobre.bg;
+    if (key === 'hero') vars['--hero-bg'] = '#0e0b0a';
     gsap.to(html, { ...vars, duration: 0.9, ease: 'power2.out', overwrite: 'auto' });
   };
 
@@ -364,15 +366,24 @@
   nav.addEventListener('mouseleave', () => moveInd(activeLink));
 
   $$('[data-theme]').forEach((sec) => {
+    const isAbout = sec.id === 'sobre';
     ScrollTrigger.create({
-      trigger: sec, start: 'top 50%', end: 'bottom 50%',
+      trigger: sec, start: isAbout ? 'top bottom' : 'top 50%', end: 'bottom 50%',
       onToggle: (s) => {
         if (!s.isActive) return;
-        setTheme(sec.dataset.theme);
+        if (!isAbout) setTheme(sec.dataset.theme);
         activeLink = links.find((l) => l.dataset.sec === sec.id) || null;
         moveInd(activeLink);
       }
     });
+    if (isAbout) {
+      ScrollTrigger.create({
+        trigger: $('.statement', sec), start: 'top bottom', endTrigger: sec, end: 'bottom 50%',
+        onEnter: () => setTheme('sobre'),
+        onEnterBack: () => setTheme('sobre'),
+        onLeaveBack: () => setTheme('hero')
+      });
+    }
   });
 
   const header = $('#header');
