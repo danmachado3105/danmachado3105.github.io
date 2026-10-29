@@ -25,6 +25,11 @@
       hl: ['Centraliza clientes, serviços, agenda e pagamentos', 'Interface web responsiva', 'API própria e banco PostgreSQL'],
       l: 'https://github.com/danmachado3105/workzen', c: 'Ver repositório', imgs: ['assets/workzen.png', 'assets/workzen2.png', 'assets/workzen3.png', 'assets/workzen4.png', 'assets/workzen5.png', 'assets/workzen6.png'] },
 
+    { t: 'Quizio', tags: ['React', 'TypeScript', 'Javascript', 'Vite'],
+      d: 'Quiz de conhecimentos gerais 100% frontend. As partidas, o perfil e o progresso ficam no navegador; não há conta, servidor, ranking online nem multiplayer online. A nova versão usa React, TypeScript estrito, Vite e React Router.',
+      hl: ['Múltiplos temas e categorias: Diversas opções de perguntas e áreas de conhecimento para explorar.', 'Sistema de níveis e conquistas: Acompanhamento de progresso, perfil e gamificação salvos localmente', 'Experiência de jogo fluida e instantânea com interface web responsiva'],
+      l: 'https://quizio-eta.vercel.app', c: 'Ver site', imgs: ['assets/quizio.png', 'assets/quizio2.png', 'assets/quizio3.png', 'assets/quizio4.png', 'assets/quizio5.png', 'assets/quizio6.png', 'assets/quizio7.png', 'assets/quizio8.png', 'assets/quizio9.png'] },
+
     { t: 'Redify', tags: ['Python-FastAPI', 'JavaScript', 'Anthropic Api'],
       d: 'Plataforma de correção de redações do ENEM com IA. Avalia as 5 competências oficiais, calibrada nos critérios reais de correção, com paywall e pagamento integrado via Mercado Pago.',
       hl: ['Avalia as 5 competências oficiais do ENEM', 'Calibrada nos critérios reais de correção', 'Paywall com pagamento integrado via Mercado Pago'],
